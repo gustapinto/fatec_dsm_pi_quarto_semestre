@@ -1,0 +1,21 @@
+version: "3.6"
+
+services:
+  node:
+    image: node:18.9.1
+    tty: true
+    volumes:
+      - ./:/dsm_pi_quarto_semestre:Z
+    ports:
+      - "3000:3000"
+    working_dir: /dsm_pi_quarto_semestre
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:14.5
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
