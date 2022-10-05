@@ -3,7 +3,6 @@ import { Controller, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
 // Importações da biblioteca de conexão com o banco de dados
 import { Client } from "pg"
-import { resourceLimits } from "worker_threads"
 
 /**
  * Controller responsável por criar e apagar registros das placas arduino
@@ -28,8 +27,11 @@ export class ArduinoController {
         const code = body.code as number
         const now = new Date() as Date
 
+
         // Usa uma função async para poder usar await
         (async () => {
+            await this.client.connect()
+
             try {
                 const queryString = `
                     INSERT INTO arduinos (code, created_at)
@@ -44,6 +46,8 @@ export class ArduinoController {
                 return res.status(500).json({
                     message: error
                 })
+            } finally {
+                await this.client.end()
             }
         })()
 

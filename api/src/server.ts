@@ -4,6 +4,7 @@ import { Server } from "@overnightjs/core"
 // Importa as nossas classes
 import { ArduinoController } from "./controllers/ArduinoController"
 import { PostgresqlDatabase } from "./database/PostgresqlDatabase"
+import { RecordController } from "./controllers/RecordController"
 
 /**
  * Declarando a classe que funcionará como servidor
@@ -35,10 +36,12 @@ export class ApiServer extends Server {
         const client = database.connect()
 
         const arduinoController = new ArduinoController(client)
+        const recordController = new RecordController(client)
 
         // Registrando os controller no overnightjs
         super.addControllers([
-            arduinoController
+            arduinoController,
+            recordController,
         ])
     }
 }
