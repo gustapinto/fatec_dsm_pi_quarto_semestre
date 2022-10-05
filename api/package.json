@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn tsc -p ./tsconfig.json"
+    "build": "yarn tsc -p ./tsconfig.json",
+    "start": "yarn build && node dist/src/index.js",
+    "migrate": "yarn build && node dist/migrate.js"
   },
   "repository": {
     "type": "git",
