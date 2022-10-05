@@ -32,8 +32,7 @@ export class ApiServer extends Server {
      * Registra os controllers
     */
     private setupControllers(): void {
-        const database = new PostgresqlDatabase()
-        const client = database.connect()
+        const client = PostgresqlDatabase.connect()
 
         const arduinoController = new ArduinoController(client)
         const recordController = new RecordController(client)

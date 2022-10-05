@@ -8,7 +8,7 @@ export class PostgresqlDatabase {
     /**
      * Conecta ao banco de dados e retorna um client
     */
-    connect(): Client {
+    static connect(): Client {
         const client = new Client({
             user: 'pi_dsm4',
             host: 'postgres',
@@ -16,6 +16,8 @@ export class PostgresqlDatabase {
             password: 'pi_dsm4',
             port: 5432,
         })
+
+        client.connect()
 
         return client
     }

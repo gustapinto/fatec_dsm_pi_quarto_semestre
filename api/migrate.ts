@@ -1,8 +1,7 @@
 import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
 
 (async () => {
-    const db = new PostgresqlDatabase()
-    const client = db.connect()
+    const client = PostgresqlDatabase.connect()
 
     const migrationsQueryString = `
         CREATE TABLE IF NOT EXISTS arduinos (
@@ -24,5 +23,7 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
         await client.query(migrationsQueryString)
     } catch(error: any) {
         console.error(error)
+    } finally {
+        client.end()
     }
 })()
