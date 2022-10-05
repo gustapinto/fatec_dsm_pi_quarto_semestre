@@ -17,14 +17,6 @@ export class PostgresqlDatabase {
             port: 5432,
         })
 
-        client.connect((error: Error) => {
-            if (error) {
-                throw error
-            }
-
-            console.log("Connected!")
-        })
-
         return client
     }
 }
