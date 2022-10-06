@@ -2,8 +2,7 @@
 import { Controller, Get, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
 // Importações da biblioteca de conexão com o banco de dados
-import { Client, QueryResult } from "pg"
-import { PostgresqlDatabase } from "../database/PostgresqlDatabase"
+import { Client, types } from "pg"
 
 /**
  * Controller responsável por criar, apagar e obter registros de temperatura
@@ -23,17 +22,11 @@ export class RecordController {
     */
     @Get('/')
     getRecords(req: Request, res: Response): Response<any>|void {
-        const params = req.query
-        const arduinosQuery = params.arduinos;
-        const codes: Array<number> = (arduinosQuery instanceof String)
-            ? [parseInt(arduinosQuery as string)]
-            : (arduinosQuery as Array<string>).map((code) => parseInt(code));
-
+        const codes = this.getArduinoCodesFromParams(req.query.arduinos as Array<string> | string);
         const queryString = `
-            SELECT *
-            FROM records
+            SELECT * FROM records
             WHERE arduino_code = ANY($1)
-        ` as string
+        `;
 
         (async () => {
             try {
@@ -83,5 +76,63 @@ export class RecordController {
                 })
             }
         })()
+    }
+
+    /**
+     * Obtém os registros de temperatura salvos nos últimos minutos
+    */
+    @Get('recent')
+    getRecentRecords(req: Request, res: Response): Response<any>|void {
+        const minutes = (req.query.minutes) ? req.query.minutes : '5'
+        const codes = this.getArduinoCodesFromParams(req.query.arduinos as Array<string> | string)
+        const recentDate = this.getNowMinusMinutes(parseInt(minutes as string))
+        const queryString = `
+            SELECT * FROM records
+            WHERE arduino_code = ANY($1)
+            AND created_at >= $2
+        `;
+
+        (async () => {
+            try {
+                // Configura o parser do pg-node para trabalhar com campos
+                // Timestamp
+                types.setTypeParser(types.builtins.TIMESTAMP, (stringValue) => {
+                    return stringValue;
+                });
+
+                const result = await this.client.query(queryString, [codes, recentDate])
+
+                return res.status(200).json({
+                    result: result.rows
+                })
+            } catch(error: any) {
+                console.error(error)
+
+                return res.status(500).json({
+                    message: error
+                })
+            }
+        })()
+    }
+
+    /**
+     * Obtendo os códigos dos arduinos passados como parâmetros, tratando casos
+     * em que apenas um código é passado
+    */
+    private getArduinoCodesFromParams(params: Array<string> | string): Array<number> {
+        return (typeof params === 'string')
+            ? [parseInt(params as string)]
+            : (params as Array<string>).map((code) => parseInt(code));
+    }
+
+    /**
+     * Obtém uma data que representa (agora - N minutos)
+    */
+    private getNowMinusMinutes(minutes: number): Date {
+        const date = new Date() as Date
+
+        date.setMinutes(date.getMinutes() - minutes)
+
+        return date
     }
 }
