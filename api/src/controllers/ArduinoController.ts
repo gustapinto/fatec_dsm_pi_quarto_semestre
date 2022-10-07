@@ -1,5 +1,5 @@
 // Importações da biblioteca de servidor
-import { Controller, Post } from "@overnightjs/core"
+import { Controller, Get, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
 // Importações da biblioteca de conexão com o banco de dados
 import { Client } from "pg"
@@ -41,6 +41,30 @@ export class ArduinoController {
 
                 return res.status(200).json({
                     message: 'Success creating a new arduino'
+                })
+            } catch(error: any) {
+                console.error(error)
+
+                return res.status(500).json({
+                    message: error
+                })
+            }
+        })()
+    }
+
+    /**
+     * Obtém as placas salvas no banco de daos
+    */
+    @Get()
+    getArduino(_: Request, res: Response): Response<any>|void {
+        const queryString = 'SELECT * FROM arduinos' as string
+
+        (async () => {
+            try {
+                const result = await this.client.query(queryString)
+
+                return res.status(200).json({
+                    result: result.rows
                 })
             } catch(error: any) {
                 console.error(error)
