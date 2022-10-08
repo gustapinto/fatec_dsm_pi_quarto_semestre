@@ -3,7 +3,7 @@ version: "3.6"
 services:
   node:
     image: node:18.9.1-alpine
-    command: /bin/bash -c "yarn install && yarn start"
+    command: /bin/bash -c "yarn install && yarn migrate && yarn start"
     restart: on-failure
     volumes:
       - ./:/dsm_pi_quarto_semestre:Z
@@ -12,6 +12,8 @@ services:
     working_dir: /dsm_pi_quarto_semestre
     env_file:
       - .env
+    depends_on:
+      - postgres
 
   postgres:
     image: postgres:14.5-alpine
