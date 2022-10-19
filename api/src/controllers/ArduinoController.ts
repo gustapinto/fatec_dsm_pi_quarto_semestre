@@ -25,19 +25,20 @@ export class ArduinoController {
         // Pegando os dados do corpo da requisição
         const body = req.body
         const code = body.code as number
+	const name = body.name as string
         const now = new Date() as Date
 
 
         const queryString = `
-            INSERT INTO arduinos (code, created_at)
-            VALUES ($1, $2)
+            INSERT INTO arduinos (code, name, created_at)
+            VALUES ($1, $2, $3)
         ` as string
 
         // Usa uma função async para poder usar await
         (async () => {
             try {
                 // Criando um novo arduino no banco de dados
-                await this.client.query(queryString, [code, now])
+                await this.client.query(queryString, [code, name, now])
 
                 return res.status(200).json({
                     message: 'Success creating a new arduino'

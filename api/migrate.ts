@@ -20,6 +20,8 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
             arduino_code INT NOT NULL REFERENCES arduinos (code),
             created_at TIMESTAMP
         );
+
+	ALTER TABLE arduinos ADD name VARCHAR(100);
     `
 
     try {
