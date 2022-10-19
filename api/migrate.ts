@@ -6,25 +6,37 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
 (async () => {
     const client = PostgresqlDatabase.connect()
 
+    const resetQueryString = `
+        DROP TABLE IF EXISTS records;
+
+        DROP TABLE IF EXISTS arduinos;
+    `
+
     const migrationsQueryString = `
         CREATE TABLE IF NOT EXISTS arduinos (
             id SERIAL PRIMARY KEY,
             code INT UNIQUE NOT NULL,
-            created_at TIMESTAMP
+	    name VARCHAR(100) NOT NULL,
+            created_at TIMESTAMP NOT NULL
         );
 
         CREATE TABLE IF NOT EXISTS records (
             id SERIAL PRIMARY KEY,
             temperature DECIMAL(2) NOT NULL,
             humidity DECIMAL(2) NOT NULL,
+	    api_temperature DECIMAL(2) NOT NULL,
             arduino_code INT NOT NULL REFERENCES arduinos (code),
-            created_at TIMESTAMP
+            created_at TIMESTAMP NOT NULL
         );
-
-	ALTER TABLE arduinos ADD name VARCHAR(100);
     `
 
     try {
+	if (process.argv.length >= 3) {
+	    if (process.argv[2] == 'reset') {
+	         await client.query(resetQueryString)
+	    }
+	}
+
         await client.query(migrationsQueryString)
     } catch(error: any) {
         console.error(error)
