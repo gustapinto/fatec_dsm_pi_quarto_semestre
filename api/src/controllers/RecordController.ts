@@ -55,15 +55,22 @@ export class RecordController {
         const humidity= body.humidity as number
         const arduinoCode = body.arduinoCode as number
         const now = new Date() as Date
+	const apiTemperature = 30.0
 
         const queryString = `
-            INSERT INTO records (temperature, humidity, arduino_code, created_at)
-            VALUES ($1, $2, $3, $4)
+            INSERT INTO records (temperature, humidity, api_temperature, arduino_code, created_at)
+            VALUES ($1, $2, $3, $4, $5)
         ` as string
 
         (async () => {
             try {
-                await this.client.query(queryString, [temperature, humidity, arduinoCode, now])
+                await this.client.query(queryString, [
+		    temperature,
+		    humidity,
+		    apiTemperature,
+		    arduinoCode,
+		    now
+		])
 
                 return res.status(200).json({
                     message: 'Success creating a new record'
