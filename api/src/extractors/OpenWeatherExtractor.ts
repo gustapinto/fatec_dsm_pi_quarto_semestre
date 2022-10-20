@@ -1,7 +1,9 @@
+import { IWeatherExtractor } from "./IWeatherExtractor"
+
 /**
  * Classe que realiza a extração dos dados da API OpenWeather
  */
-export class OpenWeatherExtractor {
+export class OpenWeatherExtractor implements IWeatherExtractor {
     private appId: string
     private baseUrl = 'https://api.openweathermap.org/data/2.5/weather?'
 
@@ -14,10 +16,18 @@ export class OpenWeatherExtractor {
      *
      * OBS: As coordenadas padrão se referem a cidade de Araras-SP
      */
-    async getWeatherData(lat: string = '-22.360537', lon: string = '-47.379837'): Promise<any> {
+    getWeatherData(lat: string = '-22.360537', lon: string = '-47.379837'): any {
         const endpoint = `${this.baseUrl}units=metric&lat=${lat}&lon=${lon}&appid=${this.appId}`
-        const res = await fetch(endpoint)
-        const data = res.ok ? await res.json() : {}
+
+        var data = {};
+
+        (async () => {
+            const res = await fetch(endpoint)
+
+            if (res.ok) {
+                data = await res.json()
+            }
+        })()
 
         return data
     }

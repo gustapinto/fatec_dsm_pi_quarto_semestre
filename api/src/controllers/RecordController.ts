@@ -3,6 +3,9 @@ import { Controller, Get, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
 // Importações da biblioteca de conexão com o banco de dados
 import { Client, types } from "pg"
+// Importações de biblioteca de conexão com a API
+import { IWeatherExtractor } from "../extractors/IWeatherExtractor"
+import { IWeatherParser } from "../parsers/IWeatherParser"
 
 /**
  * Controller responsável por criar, apagar e obter registros de temperatura
@@ -11,9 +14,13 @@ import { Client, types } from "pg"
 @Controller('api/record')
 export class RecordController {
     private client: Client
+    private extractor: IWeatherExtractor
+    private parser: IWeatherParser
 
-    constructor(client: Client) {
+    constructor(client: Client, extractor: IWeatherExtractor, parser: IWeatherParser) {
         this.client = client
+        this.extractor = extractor
+        this.parser = parser
     }
 
     /**
@@ -55,7 +62,8 @@ export class RecordController {
         const humidity= body.humidity as number
         const arduinoCode = body.arduinoCode as number
         const now = new Date() as Date
-	const apiTemperature = 30.0
+        const weatherData = this.extractor.getWeatherData()
+        const apiTemperature = this.parser.getTemperature(weatherData)
 
         const queryString = `
             INSERT INTO records (temperature, humidity, api_temperature, arduino_code, created_at)
@@ -65,12 +73,12 @@ export class RecordController {
         (async () => {
             try {
                 await this.client.query(queryString, [
-		    temperature,
-		    humidity,
-		    apiTemperature,
-		    arduinoCode,
-		    now
-		])
+                    temperature,
+                    humidity,
+                    apiTemperature,
+                    arduinoCode,
+                    now
+                ])
 
                 return res.status(200).json({
                     message: 'Success creating a new record'

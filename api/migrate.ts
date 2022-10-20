@@ -4,7 +4,7 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
  * Script que realiza a migração do banco de dados, criando as tabelas necessárias
 */
 (async () => {
-    const client = PostgresqlDatabase.connect()
+    const client = (new PostgresqlDatabase()).connect()
 
     const resetQueryString = `
         DROP TABLE IF EXISTS records;
