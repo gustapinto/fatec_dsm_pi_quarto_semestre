@@ -4,7 +4,7 @@
   "description": "Api responsável por armazenar e disponibilizar dados capturados pelos sensores arduino no PI do quarto semestre do curso de DSM da FATEC Araras",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "yarn tsc -p ./tsconfig.json",
     "start": "yarn build && node dist/src/index.js",
     "migrate": "yarn build && node dist/migrate.js",
