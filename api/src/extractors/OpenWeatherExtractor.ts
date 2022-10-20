@@ -16,20 +16,11 @@ export class OpenWeatherExtractor implements IWeatherExtractor {
      *
      * OBS: As coordenadas padrão se referem a cidade de Araras-SP
      */
-    getWeatherData(lat: string = '-22.360537', lon: string = '-47.379837'): any {
+    async getWeatherData(lat: string = '-22.360537', lon: string = '-47.379837'): Promise<any> {
         const endpoint = `${this.baseUrl}units=metric&lat=${lat}&lon=${lon}&appid=${this.appId}`
+        const res = await fetch(endpoint)
 
-        var data = {};
-
-        (async () => {
-            const res = await fetch(endpoint)
-
-            if (res.ok) {
-                data = await res.json()
-            }
-        })()
-
-        return data
+        return res.ok ? await res.json() : {}
     }
 }
 

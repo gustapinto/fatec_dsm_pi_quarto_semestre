@@ -25,9 +25,8 @@ export class ArduinoController {
         // Pegando os dados do corpo da requisição
         const body = req.body
         const code = body.code as number
-	const name = body.name as string
+        const name = body.name as string
         const now = new Date() as Date
-
 
         const queryString = `
             INSERT INTO arduinos (code, name, created_at)

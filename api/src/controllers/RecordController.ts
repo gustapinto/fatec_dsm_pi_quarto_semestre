@@ -56,13 +56,13 @@ export class RecordController {
      * Cria um novo registro a partir dos dados enviados na requisição
     */
     @Post()
-    createRecord(req: Request, res: Response): Response<any>|void {
+    async createRecord(req: Request, res: Response): Promise<Response<any>|void> {
         const body = req.body
         const temperature = body.temperature as number
         const humidity= body.humidity as number
         const arduinoCode = body.arduinoCode as number
         const now = new Date() as Date
-        const weatherData = this.extractor.getWeatherData()
+        const weatherData = await this.extractor.getWeatherData()
         const apiTemperature = this.parser.getTemperature(weatherData)
 
         const queryString = `
@@ -70,27 +70,25 @@ export class RecordController {
             VALUES ($1, $2, $3, $4, $5)
         ` as string
 
-        (async () => {
-            try {
-                await this.client.query(queryString, [
-                    temperature,
-                    humidity,
-                    apiTemperature,
-                    arduinoCode,
-                    now
-                ])
+        try {
+            await this.client.query(queryString, [
+                temperature,
+                humidity,
+                apiTemperature,
+                arduinoCode,
+                now
+            ])
 
-                return res.status(200).json({
-                    message: 'Success creating a new record'
-                })
-            } catch(error: any) {
-                console.error(error)
+            return res.status(200).json({
+                message: 'Success creating a new record'
+            })
+        } catch(error: any) {
+            console.error(error)
 
-                return res.status(500).json({
-                    message: error
-                })
-            }
-        })()
+            return res.status(500).json({
+                message: error
+            })
+        }
     }
 
     /**
