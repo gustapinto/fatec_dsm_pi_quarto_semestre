@@ -8,7 +8,8 @@
     "build": "yarn tsc -p ./tsconfig.json",
     "start": "yarn build && node dist/src/index.js",
     "migrate": "yarn build && node dist/migrate.js",
-    "migrate:reset": "yarn build && node dist/migrate.js reset"
+    "migrate:reset": "yarn build && node dist/migrate.js reset",
+     "lint": "yarn eslint --fix"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,9 @@
     "@overnightjs/core": "^1.7.6",
     "@types/jest": "^29.0.3",
     "@types/pg": "^8.6.5",
+    "@typescript-eslint/types": "^5.40.1",
     "body-parser": "^1.20.0",
+    "eslint": "^8.25.0",
     "express": "^4.18.1",
     "pg": "^8.8.0",
     "ts-jest": "^29.0.2",

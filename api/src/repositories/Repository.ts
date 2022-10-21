@@ -3,7 +3,7 @@ import { Client, types } from "pg";
 /**
  * Classe rsponsável por lidar com as conexões com banco de dados
 */
-export class Repository {
+export abstract class Repository {
     protected client: Client
 
     constructor(client: Client) {

@@ -16,7 +16,7 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
         CREATE TABLE IF NOT EXISTS arduinos (
             id SERIAL PRIMARY KEY,
             code INT UNIQUE NOT NULL,
-	    name VARCHAR(100) NOT NULL,
+            name VARCHAR(100) NOT NULL,
             created_at TIMESTAMP NOT NULL
         );
 
@@ -24,18 +24,18 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
             id SERIAL PRIMARY KEY,
             temperature DECIMAL(2) NOT NULL,
             humidity DECIMAL(2) NOT NULL,
-	    api_temperature DECIMAL(2) NOT NULL,
+            api_temperature DECIMAL(2) NOT NULL,
             arduino_code INT NOT NULL REFERENCES arduinos (code),
             created_at TIMESTAMP NOT NULL
         );
     `
 
     try {
-	if (process.argv.length >= 3) {
-	    if (process.argv[2] == 'reset') {
-	         await client.query(resetQueryString)
-	    }
-	}
+        if (process.argv.length >= 3) {
+            if (process.argv[2] == 'reset') {
+                await client.query(resetQueryString)
+            }
+        }
 
         await client.query(migrationsQueryString)
     } catch(error: any) {
