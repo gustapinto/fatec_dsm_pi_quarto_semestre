@@ -1,11 +1,10 @@
 // Importações da biblioteca de servidor
 import { Controller, Get, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
-// Importações da biblioteca de conexão com o banco de dados
-import { Client, types } from "pg"
 // Importações de biblioteca de conexão com a API
 import { IWeatherExtractor } from "../extractors/IWeatherExtractor"
 import { IWeatherParser } from "../parsers/IWeatherParser"
+import { RecordRepository } from "../repositories/RecordRepository"
 
 /**
  * Controller responsável por criar, apagar e obter registros de temperatura
@@ -13,14 +12,14 @@ import { IWeatherParser } from "../parsers/IWeatherParser"
 */
 @Controller('api/record')
 export class RecordController {
-    private client: Client
     private extractor: IWeatherExtractor
     private parser: IWeatherParser
+    private repository: RecordRepository
 
-    constructor(client: Client, extractor: IWeatherExtractor, parser: IWeatherParser) {
-        this.client = client
+    constructor(extractor: IWeatherExtractor, parser: IWeatherParser, repository: RecordRepository) {
         this.extractor = extractor
         this.parser = parser
+        this.repository = repository
     }
 
     /**
@@ -28,28 +27,22 @@ export class RecordController {
      * para os arduinos passados
     */
     @Get('/')
-    getRecords(req: Request, res: Response): Response<any>|void {
+    async getRecords(req: Request, res: Response): Promise<Response<any>|void> {
         const codes = this.getArduinoCodesFromParams(req.query.arduinos as Array<string> | string);
-        const queryString = `
-            SELECT * FROM records
-            WHERE arduino_code = ANY($1)
-        `;
 
-        (async () => {
-            try {
-                const result = await this.client.query(queryString, [codes])
+        try {
+            const records = await this.repository.getRecordsWithArduinoCodes(codes)
 
-                return res.status(200).json({
-                    result: result.rows
-                })
-            } catch(error: any) {
-                console.error(error)
-
-                return res.status(500).json({
-                    message: error
-                })
-            }
-        })()
+            return res.status(200).json({
+                result: records,
+                message: '',
+            })
+        } catch(error: any) {
+            return res.status(500).json({
+                result: null,
+                message: error.message,
+            })
+        }
     }
 
     /**
@@ -61,32 +54,20 @@ export class RecordController {
         const temperature = body.temperature as number
         const humidity= body.humidity as number
         const arduinoCode = body.arduinoCode as number
-        const now = new Date() as Date
         const weatherData = await this.extractor.getWeatherData()
         const apiTemperature = this.parser.getTemperature(weatherData)
 
-        const queryString = `
-            INSERT INTO records (temperature, humidity, api_temperature, arduino_code, created_at)
-            VALUES ($1, $2, $3, $4, $5)
-        ` as string
-
         try {
-            await this.client.query(queryString, [
-                temperature,
-                humidity,
-                apiTemperature,
-                arduinoCode,
-                now
-            ])
+            await this.repository.createRecord(temperature, humidity, apiTemperature, arduinoCode)
 
             return res.status(200).json({
+                result: null,
                 message: 'Success creating a new record'
             })
         } catch(error: any) {
-            console.error(error)
-
             return res.status(500).json({
-                message: error
+                result: null,
+                message: error.message
             })
         }
     }
@@ -95,37 +76,24 @@ export class RecordController {
      * Obtém os registros de temperatura salvos nos últimos minutos
     */
     @Get('recent')
-    getRecentRecords(req: Request, res: Response): Response<any>|void {
+    async getRecentRecords(req: Request, res: Response): Promise<Response<any>|void> {
         const minutes = (req.query.minutes) ? req.query.minutes : '5'
         const codes = this.getArduinoCodesFromParams(req.query.arduinos as Array<string> | string)
-        const recentDate = this.getNowMinusMinutes(parseInt(minutes as string))
-        const queryString = `
-            SELECT * FROM records
-            WHERE arduino_code = ANY($1)
-            AND created_at >= $2
-        `;
+        const startDate = this.getStartDate(parseInt(minutes as string))
 
-        (async () => {
-            try {
-                // Configura o parser do pg-node para trabalhar com campos
-                // Timestamp
-                types.setTypeParser(types.builtins.TIMESTAMP, (stringValue) => {
-                    return stringValue;
-                });
+        try {
+            const records = await this.repository.getRecordsWithArduinoCodesAndStartDate(codes, startDate)
 
-                const result = await this.client.query(queryString, [codes, recentDate])
-
-                return res.status(200).json({
-                    result: result.rows
-                })
-            } catch(error: any) {
-                console.error(error)
-
-                return res.status(500).json({
-                    message: error
-                })
-            }
-        })()
+            return res.status(200).json({
+                result: records,
+                message: '',
+            })
+        } catch(error: any) {
+            return res.status(500).json({
+                result: null,
+                message: error.message
+            })
+        }
     }
 
     /**
@@ -141,7 +109,7 @@ export class RecordController {
     /**
      * Obtém uma data que representa (agora - N minutos)
     */
-    private getNowMinusMinutes(minutes: number): Date {
+    private getStartDate(minutes: number): Date {
         const date = new Date() as Date
 
         date.setMinutes(date.getMinutes() - minutes)
