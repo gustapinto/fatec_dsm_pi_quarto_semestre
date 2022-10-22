@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "82e001a2-faaf-4a98-bd7d-a649fc6211ec",
+		"name": "Termostato FATEC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18899765"
+	},
+	"item": [
+		{
+			"name": "Criar Arduino",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": 12345,\n    \"name\": \"impressora\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://termostato.programame.dev/api/arduino",
+					"protocol": "https",
+					"host": [
+						"termostato",
+						"programame",
+						"dev"
+					],
+					"path": [
+						"api",
+						"arduino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Arduino",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://termostato.programame.dev/api/arduino",
+					"protocol": "https",
+					"host": [
+						"termostato",
+						"programame",
+						"dev"
+					],
+					"path": [
+						"api",
+						"arduino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Registros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://termostato.programame.dev/api/record?arduinos=12345",
+					"protocol": "https",
+					"host": [
+						"termostato",
+						"programame",
+						"dev"
+					],
+					"path": [
+						"api",
+						"record"
+					],
+					"query": [
+						{
+							"key": "arduinos",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Registros Filtrando Por Minutos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://termostato.programame.dev/api/record?arduinos=12345&minutes=30",
+					"protocol": "https",
+					"host": [
+						"termostato",
+						"programame",
+						"dev"
+					],
+					"path": [
+						"api",
+						"record"
+					],
+					"query": [
+						{
+							"key": "arduinos",
+							"value": "12345"
+						},
+						{
+							"key": "minutes",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"arduinoCode\": 12345,\n    \"temperature\": 30,\n    \"humidity\": 65\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://termostato.programame.dev/api/record",
+					"protocol": "https",
+					"host": [
+						"termostato",
+						"programame",
+						"dev"
+					],
+					"path": [
+						"api",
+						"record"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
