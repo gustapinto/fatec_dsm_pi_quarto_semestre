@@ -1,7 +1,7 @@
 import { Repository } from "./Repository";
 
 /**
- * Classe rsponsável por lidar com as conexões com banco de dados para as queries
+ * Classe responsável por lidar com as conexões com banco de dados para as queries
  * de registros de temperatura
 */
 export class RecordRepository extends Repository {
@@ -14,7 +14,7 @@ export class RecordRepository extends Repository {
             WHERE arduino_code = ANY($1)
         `;
 
-        return await this.query(queryString, [codes])
+        return await this.query(queryString, [codes])   
     }
 
     /**
@@ -42,7 +42,7 @@ export class RecordRepository extends Repository {
             VALUES ($1, $2, $3, $4, $5)
         `
 
-        this.query(queryString, [
+        await this.query(queryString, [
             temperature,
             humidity,
             apiTemperature,

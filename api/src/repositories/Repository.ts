@@ -1,4 +1,4 @@
-import { Client, types } from "pg";
+import { Client, Query, QueryResult, types } from "pg";
 
 /**
  * Classe rsponsável por lidar com as conexões com banco de dados
@@ -24,7 +24,13 @@ export abstract class Repository {
                 return stringValue;
             });
 
-            const result = await this.client.query(queryString, args)
+            let result: QueryResult
+
+            if (args.length == 0) {
+                result = await this.client.query(queryString)
+            } else {
+                result = await this.client.query(queryString, args)
+            }
 
             rows = result.rows
         } catch(error: any) {

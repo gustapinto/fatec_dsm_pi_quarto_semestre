@@ -8,6 +8,7 @@ import { RecordController } from "./controllers/RecordController"
 import { OpenWeatherExtractor } from "./extractors/OpenWeatherExtractor"
 import { OpenWeatherParser } from "./parsers/OpenWeatherParser"
 import { RecordRepository } from "./repositories/RecordRepository"
+import { ArduinoRepository } from "./repositories/ArduinoRepository"
 
 /**
  * Declarando a classe que funcionará como servidor
@@ -39,10 +40,11 @@ export class ApiServer extends Server {
 
         const extractor = new OpenWeatherExtractor(process.env.OPENWEATHER_API_KEY as string)
         const parser = new OpenWeatherParser()
-        const repository = new RecordRepository(client)
+        const recordRepository = new RecordRepository(client)
+        const arduinoRepository = new ArduinoRepository(client)
 
-        const arduinoController = new ArduinoController(client)
-        const recordController = new RecordController(extractor, parser, repository)
+        const arduinoController = new ArduinoController(arduinoRepository)
+        const recordController = new RecordController(extractor, parser, recordRepository)
 
         // Registrando os controller no overnightjs
         super.addControllers([
