@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTintMode="screen"
+    tools:context=".inicio">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="412dp"
+        android:layout_height="495dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/steel_blue"
+        android:backgroundTintMode="src_over"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="361dp"
+        android:layout_height="95dp"
+        android:text="Meça a temperatura e umidade do ambiente em que se encontra o equipamento monitorado, receba notificações em tempo real de potenciais riscos."
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="192dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/international_orange"
+        android:text="Começar"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="484dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/umidadebaixa"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/temperaturabaixa"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        tools:layout_editor_absoluteX="308dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/umidadealta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
