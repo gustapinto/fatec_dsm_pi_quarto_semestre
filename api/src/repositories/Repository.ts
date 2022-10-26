@@ -35,6 +35,8 @@ export abstract class Repository {
             rows = result.rows
         } catch(error: any) {
             console.error(error)
+
+            throw error;
         }
 
         return rows
