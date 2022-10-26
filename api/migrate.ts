@@ -1,10 +1,11 @@
+import { Config } from "./src/config";
 import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
 
 /**
  * Script que realiza a migração do banco de dados, criando as tabelas necessárias
 */
 (async () => {
-    const client = (new PostgresqlDatabase()).connect()
+    const client = (new PostgresqlDatabase(Config.getDatabaseConfig())).connect()
 
     const resetQueryString = `
         DROP TABLE IF EXISTS records;

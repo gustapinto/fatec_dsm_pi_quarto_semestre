@@ -6,17 +6,17 @@ import { IConnector } from "./IConnector"
  * Classe responsável por lidar com a conexão com o banco de dados Postgreslq
 */
 export class PostgresqlDatabase implements IConnector {
+    private config: DatabaseConfig
+
+    constructor(config: DatabaseConfig) {
+        this.config = config
+    }
+
     /**
      * Conecta ao banco de dados e retorna um client
     */
     connect(): Client {
-        const client = new Client({
-            user: 'pi_dsm4',
-            host: 'postgres',
-            database: 'pi_dsm4',
-            password: 'pi_dsm4',
-            port: 5432,
-        })
+        const client = new Client(this.config)
 
         client.connect()
 

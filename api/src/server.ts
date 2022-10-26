@@ -9,6 +9,7 @@ import { OpenWeatherExtractor } from "./extractors/OpenWeatherExtractor"
 import { OpenWeatherParser } from "./parsers/OpenWeatherParser"
 import { RecordRepository } from "./repositories/RecordRepository"
 import { ArduinoRepository } from "./repositories/ArduinoRepository"
+import { Config } from "./config"
 
 /**
  * Declarando a classe que funcionará como servidor
@@ -36,9 +37,10 @@ export class ApiServer extends Server {
      * Registra os controllers
     */
     private setupControllers(): void {
-        const client = (new PostgresqlDatabase()).connect()
+        const dbConnector = new PostgresqlDatabase(Config.getDatabaseConfig())
+        const client = dbConnector.connect()
 
-        const extractor = new OpenWeatherExtractor(process.env.OPENWEATHER_API_KEY as string)
+        const extractor = new OpenWeatherExtractor(Config.getOpenWheaterAppId())
         const parser = new OpenWeatherParser()
         const recordRepository = new RecordRepository(client)
         const arduinoRepository = new ArduinoRepository(client)
