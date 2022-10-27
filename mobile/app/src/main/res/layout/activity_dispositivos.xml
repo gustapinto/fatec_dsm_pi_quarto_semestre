@@ -4,17 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".dispositivos">
 
     <View
         android:id="@+id/view3"
-        android:layout_width="412dp"
-        android:layout_height="559dp"
-        android:background="@drawable/rounded"
+        android:layout_width="411dp"
+        android:layout_height="527dp"
+        android:background="@drawable/rounded_background"
         android:backgroundTint="@color/steel_blue"
         android:backgroundTintMode="src_over"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="83dp" />
+        tools:layout_editor_absoluteY="75dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="170dp"
+        android:layout_height="38dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/oxford_blue"
+        android:text="Começar"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="504dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image5"
@@ -39,7 +50,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image13"
         android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_height="109dp"
         android:src="@drawable/celular"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
@@ -47,14 +58,14 @@
         tools:layout_editor_absoluteY="117dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image14"
+        android:id="@+id/profile_image16"
         android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:src="@drawable/tablet"
+        android:layout_height="109dp"
+        android:src="@drawable/buttonmais"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="288dp" />
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="269dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image15"
@@ -64,24 +75,26 @@
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="288dp" />
+        tools:layout_editor_absoluteY="269dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image16"
+        android:id="@+id/profile_image14"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:src="@drawable/buttonmais"
+        android:src="@drawable/tablet"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="288dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="269dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Meu equipamento é um(a)..."
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="28dp" />
 

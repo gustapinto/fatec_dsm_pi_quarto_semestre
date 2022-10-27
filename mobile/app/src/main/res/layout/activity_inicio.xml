@@ -4,79 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:backgroundTintMode="screen"
     tools:context=".inicio">
 
     <View
         android:id="@+id/view"
         android:layout_width="412dp"
-        android:layout_height="495dp"
-        android:background="@drawable/rounded"
+        android:layout_height="541dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/rounded_background"
         android:backgroundTint="@color/steel_blue"
         android:backgroundTintMode="src_over"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="149dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="361dp"
-        android:layout_height="95dp"
-        android:text="Meça a temperatura e umidade do ambiente em que se encontra o equipamento monitorado, receba notificações em tempo real de potenciais riscos."
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="185dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="192dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded"
-        android:backgroundTint="@color/international_orange"
-        android:text="Começar"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="484dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="2dp"
         android:src="@drawable/umidadebaixa"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="329dp" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/temperaturabaixa"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="329dp" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/umidadealta"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="329dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image4"
+        app:layout_constraintEnd_toStartOf="@+id/profile_image4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile_image4" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image4"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="212dp"
         android:src="@drawable/temperaturaalta"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="329dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/profile_image3"
+        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/umidadealta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image4"
+        app:layout_constraintEnd_toStartOf="@+id/profile_image2"
+        app:layout_constraintStart_toEndOf="@+id/profile_image4"
+        app:layout_constraintTop_toTopOf="@+id/profile_image4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="195dp"
+        android:src="@drawable/temperaturabaixa"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_image3"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.922" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="291dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="213dp"
+        android:text="Meça a temperatura e umidade do ambiente em que se encontra o equipamento monitorado, receba notificações em tempo real de potenciais riscos."
+        android:textAlignment="center"
+        android:textColor="@color/cultured"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="170dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/oxford_blue"
+        android:text="Começar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
