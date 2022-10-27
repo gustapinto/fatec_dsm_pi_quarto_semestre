@@ -10,14 +10,20 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Install SSH Key
+      - name: Enable SSH
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: placeholder
 
-      - name: Adding Known Hosts
+      - name: Add hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST_IP }} >> ~/.ssh/known_hosts
 
-      - name: Deploy over SSH
-        run: ssh -T ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && git pull --ff-only && docker-compose -f production.yml down && docker-compose -f production.yml up -d"
+      - name: Pull
+        run: ssh -T ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && git pull --ff-only"
+
+      - name: Test
+        run: ssh -T ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && docker-compose -f production.yml exec node yarn test"
+
+      - name: Deploy
+        run: ssh -T ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && docker-compose -f production.yml down && docker-compose -f production.yml up -d"
