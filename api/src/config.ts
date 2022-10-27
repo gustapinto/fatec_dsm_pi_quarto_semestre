@@ -25,4 +25,11 @@ export class Config {
 
         return config
     }
+
+    /**
+     * Obtém o secret para assinatura de tokens JWT
+    */
+    static getJwtSecret(): string {
+        return process.env.JWT_SECRET!
+    }
 }
