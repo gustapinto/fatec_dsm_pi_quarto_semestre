@@ -23,7 +23,7 @@ jobs:
         run: ssh -T ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && git pull --ff-only"
 
       - name: Test
-        run: ssh -Tt ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && docker-compose -f production.yml exec node yarn test:nocolors"
+        run: ssh -Tt ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && docker-compose -f production.yml exec -T node yarn test:nocolors"
 
       - name: Deploy
         run: ssh -T ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST_IP }} "cd ${{ secrets.DEPLOY_PATH }} && docker-compose -f production.yml down && docker-compose -f production.yml up -d"
