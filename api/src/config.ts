@@ -32,4 +32,11 @@ export class Config {
     static getJwtSecret(): string {
         return process.env.JWT_SECRET!
     }
+
+    /**
+     * Obtém o tipo padrão para o Token JWT
+    */
+    static getTokenType(): string {
+        return 'Bearer'
+    }
 }
