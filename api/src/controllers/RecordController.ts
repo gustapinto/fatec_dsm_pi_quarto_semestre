@@ -1,8 +1,9 @@
 // Importações da biblioteca de servidor
-import { Controller, Get, Post } from "@overnightjs/core"
+import { ClassMiddleware, Controller, Get, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
 // Importações de biblioteca de conexão com a API
 import { IWeatherExtractor } from "../extractors/IWeatherExtractor"
+import AuthMiddleware from "../middlewares/AuthMiddleware"
 import { IWeatherParser } from "../parsers/IWeatherParser"
 import { RecordRepository } from "../repositories/RecordRepository"
 
@@ -11,6 +12,7 @@ import { RecordRepository } from "../repositories/RecordRepository"
  * e umidade
 */
 @Controller('api/record')
+@ClassMiddleware([AuthMiddleware])
 export class RecordController {
     private extractor: IWeatherExtractor
     private parser: IWeatherParser

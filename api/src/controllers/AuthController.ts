@@ -32,7 +32,10 @@ export class AuthController {
             })
 
             return res.status(200).json({
-                result: token,
+                result: {
+                    type: Config.getTokenType(),
+                    token: token,
+                },
                 message: 'Authentication with success'
             })
         }

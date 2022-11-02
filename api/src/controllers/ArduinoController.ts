@@ -1,6 +1,7 @@
 // Importações da biblioteca de servidor
-import { Controller, Get, Post } from "@overnightjs/core"
+import { Controller, Get, Middleware, Post } from "@overnightjs/core"
 import { Request, Response } from "express"
+import AuthMiddleware from "../middlewares/AuthMiddleware"
 import { ArduinoRepository } from "../repositories/ArduinoRepository"
 
 /**
@@ -43,6 +44,7 @@ export class ArduinoController {
      * Obtém as placas salvas no banco de daos
     */
     @Get()
+    @Middleware([AuthMiddleware])
     async getArduino(_: Request, res: Response): Promise<Response<any>|void> {
         try {
             const arduinos = await this.repository.getAllArduinos()
