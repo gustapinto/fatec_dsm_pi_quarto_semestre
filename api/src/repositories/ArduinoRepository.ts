@@ -26,4 +26,19 @@ export class ArduinoRepository extends Repository {
 
         return await this.query(queryString, [])
     }
+
+    /**
+     * Verifica se o arduino existe no banco a partir de seu código
+    */
+    async exists(arduinoCode: string): Promise<boolean> {
+        const queryString = `
+            SELECT count(*)
+            FROM arduinos
+            WHERE code = $1
+            LIMIT 1
+        `
+        const result = await this.query(queryString, [arduinoCode])
+
+        return result[0].count != 0
+    }
 }
