@@ -14,7 +14,7 @@
         android:layout_height="541dp"
         android:layout_marginTop="156dp"
         android:background="@drawable/rounded_background"
-        android:backgroundTint="@color/steel_blue"
+        android:backgroundTint="@color/usafa_blue"
         android:backgroundTintMode="src_over"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
