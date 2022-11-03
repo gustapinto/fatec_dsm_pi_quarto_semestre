@@ -5,6 +5,7 @@
 // Bibiliotecas para conexão com o wifi e requisições HTTP
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
+#include <ArduinoJson.h>
 
 #define DHT_PIN 4
 #define DELAY_MS 5000
@@ -33,6 +34,8 @@ std::tuple<float, float> getSensorData()
 
 /// Faz login na API e retorna o Token JWT correspondente
 String login() {
+    StaticJsonDocument<400> response;
+
     http.begin(client, API_BASE_URL + "/api/login");
     http.addHeader("content-type", "application/json");
 
@@ -43,18 +46,34 @@ String login() {
         return "";
     }
 
-    Serial.println(responseCode);
-
     String responseBody = http.getString();
     http.end();
 
-    return "";
+    DeserializationError error = deserializeJson(response, responseBody);
+    if (error) {
+        return "";
+    }
+
+    String tokenType = response["result"]["type"];
+    String token = response["result"]["token"];
+
+    return tokenType + " " + token;
 }
 
 /// Faz a requisição para realizar a criação de um novo registro
 /// de temperatura
 void createRecord(float temperature, float humidity, String token) {
-    // TODO
+    http.begin(client, API_BASE_URL + "/api/arduino");
+    http.addHeader("content-type", "application/json");
+    http.addHeader("Authorization", token);
+
+    String payload = "{}";
+    int responseCode = http.POST(payload);
+    if (responseCode != HTTP_CODE_OK) {
+        return;
+    }
+
+    http.end();
 }
 
 void setup()
@@ -80,6 +99,8 @@ void loop()
     if (token == "") {
         return;
     }
+
+    createRecord(temperature, humidity, token);
 
     delay(DELAY_MS);
 }
