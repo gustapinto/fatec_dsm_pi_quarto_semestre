@@ -15,7 +15,7 @@
 
 // Define o código da placa e a url base da api
 String const CODE = "123456";
-String const API_BASE_URL = "https://termostato.programame.dev";
+String const API_BASE_URL = "https://termostato.programame.dev/api";
 
 // Configura o sensor DHT
 DHT dht(DHT_PIN, DHT11);
@@ -36,7 +36,7 @@ String login()
     HTTPClient http;
     StaticJsonDocument<384> response;
 
-    String endpoint = API_BASE_URL + "/api/auth";
+    String endpoint = API_BASE_URL + "/auth";
     String payload = "{\"arduinoCode\": " + CODE + "}";
 
     client.setInsecure();  // Desabilita validação de certificado
@@ -60,6 +60,28 @@ String login()
     return response["result"];
 }
 
+/// Cria um novo registro
+void createRecord(String token, String temperature, String humidity)
+{
+    WiFiClientSecure client;
+    HTTPClient http;
+
+    String endpoint = API_BASE_URL + "/record";
+    String payload = "{\"arduinoCode\":" + CODE + ",\"temperature\":" + temperature + ",\"humidity\":" + humidity + "}";
+
+    client.setInsecure();
+    http.begin(client, endpoint.c_str());
+    http.addHeader("content-type", "application/json");
+    http.addHeader("Authorization", token.c_str());
+
+    http.POST(payload.c_str());
+
+    String body = http.getString();
+    http.end();
+
+    Serial.println(body);
+}
+
 void setup()
 {
     Serial.begin(115200);
@@ -81,14 +103,17 @@ void setup()
 
 void loop()
 {
-    auto [temperature, humidity] = getSensorData();
-
     String token = login();
     if (token == "") {
         return;
     }
 
-    Serial.println(token);
+    auto [temperature, humidity] = getSensorData();
+
+    String temperatureStr = String(temperature, 2);
+    String humidityStr = String(humidity, 2);
+
+    createRecord(token, temperatureStr, humidityStr);
 
     delay(DELAY_MS);
 }
