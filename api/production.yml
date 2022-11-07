@@ -14,13 +14,3 @@ services:
       - .env
     depends_on:
       - postgres
-
-  postgres:
-    image: postgres:14.5-alpine
-    restart: on-failure
-    ports:
-      - "127.0.0.1:5432:5432"
-    env_file:
-      - .env
-    volumes:
-      - ./db:/var/lib/postgres:Z
