@@ -12,7 +12,7 @@ class inicio : AppCompatActivity() {
 
 
         buttonStart.setOnClickListener {
-            val intent = Intent(applicationContext, dispositivos::class.java)
+            val intent = Intent(applicationContext, addDispositivos::class.java)
 
             startActivity(intent)
         }
