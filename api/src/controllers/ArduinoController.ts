@@ -65,15 +65,15 @@ export class ArduinoController {
     /**
      * Atualiza a placa arduino a partir dos dados passados
     */
-    @Put()
+    @Put(':code')
     @Middleware([AuthMiddleware])
     async updateArduino(req: Request, res: Response): Promise<Response<any>|void> {
-        const arduinoOldCode = req.query.arduino as string
+        const arduinoCode = req.params.code as string
         const arduinoNewCode = req.body.code as number
         const arduinoNewName = req.body.name as string
 
         try {
-            await this.repository.updateArduino(arduinoOldCode, arduinoNewCode, arduinoNewName)
+            await this.repository.updateArduino(arduinoCode, arduinoNewCode, arduinoNewName)
 
             return res.status(200).json({
                 result: null,
@@ -83,7 +83,7 @@ export class ArduinoController {
             if (error instanceof ArduinoDoesNotExistsException) {
                 return res.status(400).json({
                     result: null,
-                    message: `The arduino ${arduinoOldCode} does not exist, please try again with another arduino code`
+                    message: `The arduino ${arduinoCode} does not exist, please try again with another arduino code`
                 })
             }
 
@@ -97,9 +97,13 @@ export class ArduinoController {
     /**
      * Remove a placa arduino do banco de dados
     */
-    @Delete()
+    @Delete(':code')
     @Middleware([AuthMiddleware])
     async deleteArduino(req: Request, res: Response): Promise<Response<any>|void> {
-        // TODO
+        const arduinoCode = req.params.code as string
+
+        /**
+         * TODO
+        */
     }
 }
