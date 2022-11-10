@@ -1,6 +1,7 @@
 // Importações da biblioteca de servidor
-import { Controller, Get, Middleware, Post } from "@overnightjs/core"
+import { Controller, Delete, Get, Middleware, Post, Put } from "@overnightjs/core"
 import { Request, Response } from "express"
+import { ArduinoDoesNotExistsException } from "../exceptions/ArduinoDoesNotExistsException"
 import AuthMiddleware from "../middlewares/AuthMiddleware"
 import { ArduinoRepository } from "../repositories/ArduinoRepository"
 
@@ -59,5 +60,46 @@ export class ArduinoController {
                 message: error.message,
             })
         }
+    }
+
+    /**
+     * Atualiza a placa arduino a partir dos dados passados
+    */
+    @Put()
+    @Middleware([AuthMiddleware])
+    async updateArduino(req: Request, res: Response): Promise<Response<any>|void> {
+        const arduinoOldCode = req.query.arduino as string
+        const arduinoNewCode = req.body.code as number
+        const arduinoNewName = req.body.name as string
+
+        try {
+            await this.repository.updateArduino(arduinoOldCode, arduinoNewCode, arduinoNewName)
+
+            return res.status(200).json({
+                result: null,
+                message: 'Success updating the record'
+            })
+        } catch(error: any) {
+            if (error instanceof ArduinoDoesNotExistsException) {
+                return res.status(400).json({
+                    result: null,
+                    message: `The arduino ${arduinoOldCode} does not exist, please try again with another arduino code`
+                })
+            }
+
+            return res.status(500).json({
+                result: null,
+                message: error.message,
+            })
+        }
+    }
+
+    /**
+     * Remove a placa arduino do banco de dados
+    */
+    @Delete()
+    @Middleware([AuthMiddleware])
+    async deleteArduino(req: Request, res: Response): Promise<Response<any>|void> {
+        // TODO
     }
 }
