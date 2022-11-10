@@ -11,7 +11,7 @@
         android:id="@+id/view4"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="0dp"
-        android:layout_height="586dp"
+        android:layout_height="600dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/rounded_background"
         android:backgroundTint="@color/usafa_blue"
@@ -20,10 +20,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="170dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/oxford_blue"
+        android:text="Continuar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.758"
+        tools:ignore="TouchTargetSizeCheck" />
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="-15dp"
         android:layout_marginTop="5dp"
         android:text="Não Listado"
         android:textColor="@color/cultured"
@@ -97,7 +114,7 @@
         android:id="@+id/profile_image6"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/celular"
         app:civ_border_color="#FF000000"
@@ -110,7 +127,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:src="@drawable/impressora"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
@@ -121,7 +138,7 @@
         android:id="@+id/profile_image7"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:src="@drawable/notebook"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
@@ -133,7 +150,7 @@
         android:id="@+id/textView2"
         android:layout_width="311dp"
         android:layout_height="30dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="5dp"
@@ -181,5 +198,24 @@
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/profile_image7" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="255dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/cultured"
+        android:ems="10"
+        android:hint="Nome do dispositivo"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:textColor="@color/outrageous_orange"
+        android:textColorHint="@color/outrageous_orange"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
