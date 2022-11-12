@@ -14,7 +14,7 @@ export class RecordRepository extends Repository {
             WHERE arduino_code = ANY($1)
         `;
 
-        return await this.query(queryString, [codes])   
+        return await this.query(queryString, [codes])
     }
 
     /**
@@ -49,5 +49,15 @@ export class RecordRepository extends Repository {
             arduinoCode,
             now
         ])
+    }
+
+    /**
+     * Remove os registros do banco de dados a partir do código de arduino que
+     * os criou
+    */
+    async deleteRecordWithArduinoCode(arduinoCode: string | number): Promise<void> {
+        const queryString = `DELETE FROM records WHERE arduino_code = $1`
+
+        await this.query(queryString, [arduinoCode])
     }
 }
