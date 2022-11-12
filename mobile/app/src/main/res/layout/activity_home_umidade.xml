@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cultured"
     tools:context=".homeUmidade">
 
     <view
         android:id="@+id/view10"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="0dp"
-        android:layout_height="350dp"
+        android:layout_height="280dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="340dp"
         android:layout_marginEnd="1dp"
         android:background="@drawable/rounded_background"
         android:backgroundTint="@color/usafa_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView35"
@@ -49,7 +49,7 @@
         android:id="@+id/imageView5"
         android:layout_width="115dp"
         android:layout_height="115dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -146,18 +146,6 @@
         android:backgroundTint="@color/cultured"
         app:layout_constraintStart_toEndOf="@+id/view11"
         app:layout_constraintTop_toTopOf="@+id/view10" />
-
-    <view
-        android:id="@+id/view21"
-        class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="290dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="-25dp"
-        android:background="@drawable/rounded_groups"
-        android:backgroundTint="@color/cultured"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view10"
-        app:layout_constraintStart_toStartOf="@+id/view10" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image20"
@@ -298,5 +286,46 @@
         app:layout_constraintEnd_toEndOf="@+id/view19"
         app:layout_constraintStart_toStartOf="@+id/view19"
         app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+    <view
+        android:id="@+id/view5"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_nav"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view10" />
+
+    <ImageView
+        android:id="@+id/homeUmiViewUmi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/umi" />
+
+    <ImageView
+        android:id="@+id/homeConfigViewUmi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/config" />
+
+    <ImageView
+        android:id="@+id/homeTempViewUmi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/temp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
