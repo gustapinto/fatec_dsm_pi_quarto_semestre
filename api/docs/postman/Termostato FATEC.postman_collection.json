@@ -1,54 +1,21 @@
 {
 	"info": {
-		"_postman_id": "82e001a2-faaf-4a98-bd7d-a649fc6211ec",
+		"_postman_id": "b97c0a5f-bfd9-438b-935a-06963f61bfd2",
 		"name": "Termostato FATEC",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18899765"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Criar Arduino",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"code\": 12345,\n    \"name\": \"impressora\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://termostato.programame.dev/api/arduino",
-					"protocol": "https",
-					"host": [
-						"termostato",
-						"programame",
-						"dev"
-					],
-					"path": [
-						"api",
-						"arduino"
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "Listar Arduino",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://termostato.programame.dev/api/arduino",
-					"protocol": "https",
+					"raw": "localhost:3000/api/arduino",
 					"host": [
-						"termostato",
-						"programame",
-						"dev"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"arduino"
@@ -63,13 +30,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://termostato.programame.dev/api/record?arduinos=12345",
-					"protocol": "https",
+					"raw": "localhost:3000/api/record?arduinos=12345&arduinos=123456",
 					"host": [
-						"termostato",
-						"programame",
-						"dev"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"record"
@@ -78,6 +43,10 @@
 						{
 							"key": "arduinos",
 							"value": "12345"
+						},
+						{
+							"key": "arduinos",
+							"value": "123456"
 						}
 					]
 				}
@@ -90,13 +59,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://termostato.programame.dev/api/record?arduinos=12345&minutes=30",
-					"protocol": "https",
+					"raw": "localhost:3000/api/record?arduinos=12345&minutes=30",
 					"host": [
-						"termostato",
-						"programame",
-						"dev"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"record"
@@ -118,11 +85,21 @@
 		{
 			"name": "Criar Registro",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcmR1aW5vQ29kZSI6MTIzNDU2LCJpYXQiOjE2NjgyMDk0OTgsImV4cCI6MTY2ODIxMzA5OH0.pAyLiqIkgoXriNt8wRDyE_RmDumJdj3LHEuRMShEZFI",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"arduinoCode\": 12345,\n    \"temperature\": 30,\n    \"humidity\": 65\n}",
+					"raw": "{\n    \"arduinoCode\": 123456,\n    \"temperature\": 30,\n    \"humidity\": 65\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,16 +107,149 @@
 					}
 				},
 				"url": {
-					"raw": "https://termostato.programame.dev/api/record",
-					"protocol": "https",
+					"raw": "localhost:3000/api/record",
 					"host": [
-						"termostato",
-						"programame",
-						"dev"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"record"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"arduinoCode\": 123456\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar Arduino",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcmR1aW5vQ29kZSI6MTIzNDU2LCJpYXQiOjE2NjgyMDk0OTgsImV4cCI6MTY2ODIxMzA5OH0.pAyLiqIkgoXriNt8wRDyE_RmDumJdj3LHEuRMShEZFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/arduino/123456",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"arduino",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Arduino",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcmR1aW5vQ29kZSI6MTIzNDU2LCJpYXQiOjE2NjgyMDk0OTgsImV4cCI6MTY2ODIxMzA5OH0.pAyLiqIkgoXriNt8wRDyE_RmDumJdj3LHEuRMShEZFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": 123456,\n    \"name\": \"impressora 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/arduino/123456",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"arduino",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Arduino",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcmR1aW5vQ29kZSI6MTIzNDU2LCJpYXQiOjE2NjgyMDk0OTgsImV4cCI6MTY2ODIxMzA5OH0.pAyLiqIkgoXriNt8wRDyE_RmDumJdj3LHEuRMShEZFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": 123456,\n    \"name\": \"impressora\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/arduino",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"arduino"
 					]
 				}
 			},
