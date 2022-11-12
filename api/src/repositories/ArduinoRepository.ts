@@ -43,7 +43,7 @@ export class ArduinoRepository extends Repository {
     }
 
     /**
-     * Atualiza um arduiraiseno já existente no banco de dados
+     * Atualiza um arduinos já existente no banco de dados
     */
     async updateArduino(oldCode: string | number, newCode: number, newName: string): Promise<void> {
         if (!await this.exists(oldCode)) {
@@ -67,7 +67,7 @@ export class ArduinoRepository extends Repository {
             throw new ArduinoDoesNotExistsException()
         }
 
-        const queryString = `DELETE arduinos WHERE code = $1`
+        const queryString = `DELETE FROM arduinos WHERE code = $1`
 
         await this.query(queryString, [arduinoCode])
     }
