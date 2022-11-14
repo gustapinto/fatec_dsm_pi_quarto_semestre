@@ -46,7 +46,7 @@ export class ApiServer extends Server {
         const recordRepository = new RecordRepository(client)
         const arduinoRepository = new ArduinoRepository(client)
 
-        const arduinoController = new ArduinoController(arduinoRepository)
+        const arduinoController = new ArduinoController(arduinoRepository, recordRepository)
         const recordController = new RecordController(extractor, parser, recordRepository)
         const authController = new AuthController(arduinoRepository)
 

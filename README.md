@@ -10,6 +10,12 @@
   <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualStudioCode&logoColor=white">
+  <img src="https://img.shields.io/badge/Figma-5551ff?style=for-the-badge&logo=figma&logoColor=white">
+  <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=androidStudio&logoColor=white">
+</p>
+
 ## Conhecendo o projeto
 
 O projeto é uma plataforma de monitoramento remoto de dispositivos eletrônicos e equipamentos industriais, integrando os dados de temperatura e umidade coletados pelo sensor a partir de um aplicativo Android rápido e amigável.
