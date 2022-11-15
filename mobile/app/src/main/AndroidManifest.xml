@@ -32,7 +32,7 @@
             android:name=".homeTemp"
             android:exported="false" />
         <activity
-            android:name=".dispositivos"
+            android:name=".newDispositivos"
             android:exported="false" />
         <activity
             android:name=".testeImagem"

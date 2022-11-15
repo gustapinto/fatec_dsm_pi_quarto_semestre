@@ -133,7 +133,7 @@
         app:srcCompat="@drawable/temp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/addDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -153,7 +153,7 @@
         app:srcCompat="@drawable/edit" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/buttonHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -188,7 +188,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view8"
         app:layout_constraintStart_toStartOf="@+id/view8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/addDispositivo" />
 
     <TextView
         android:id="@+id/textView29"
@@ -202,6 +202,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view9"
         app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonHistory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

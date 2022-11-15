@@ -4,6 +4,476 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cultured"
     tools:context=".historico">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image27"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/impressora3d"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <view
+        android:id="@+id/view29"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="0dp"
+        android:layout_height="570dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/steel_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Histórico"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Temperatura"
+        android:textColor="@color/cultured"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="@+id/view29" />
+
+    <view
+        android:id="@+id/view50"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="@+id/view29" />
+
+    <TextView
+        android:id="@+id/textView90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hoje"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view50"
+        app:layout_constraintEnd_toEndOf="@+id/view50"
+        app:layout_constraintStart_toStartOf="@+id/view50"
+        app:layout_constraintTop_toTopOf="@+id/view50" />
+
+    <TextView
+        android:id="@+id/textView83"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="265dp"
+        android:text="Temperatura"
+        android:textColor="@color/cultured"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="@+id/view29" />
+
+    <view
+        android:id="@+id/view31"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="290dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="@+id/view29" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hoje"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view31"
+        app:layout_constraintEnd_toEndOf="@+id/view31"
+        app:layout_constraintStart_toStartOf="@+id/view31"
+        app:layout_constraintTop_toTopOf="@+id/view31" />
+
+    <view
+        android:id="@+id/view30"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="@+id/view29" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image28"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view30"
+        app:layout_constraintStart_toStartOf="@+id/view30"
+        app:layout_constraintTop_toTopOf="@+id/view30" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00º C"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view30"
+        app:layout_constraintStart_toEndOf="@+id/profile_image28"
+        app:layout_constraintTop_toTopOf="@+id/view30" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="12 Out | 10:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view30"
+        app:layout_constraintEnd_toEndOf="@+id/view30"
+        app:layout_constraintTop_toTopOf="@+id/view30" />
+
+    <view
+        android:id="@+id/view34"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toBottomOf="@+id/view30" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image32"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view34"
+        app:layout_constraintStart_toStartOf="@+id/view34"
+        app:layout_constraintTop_toTopOf="@+id/view34" />
+
+    <TextView
+        android:id="@+id/textView60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00º C"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view34"
+        app:layout_constraintStart_toEndOf="@+id/profile_image32"
+        app:layout_constraintTop_toTopOf="@+id/view34" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="12 Out | 10:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view34"
+        app:layout_constraintEnd_toEndOf="@+id/view34"
+        app:layout_constraintTop_toTopOf="@+id/view34" />
+
+    <view
+        android:id="@+id/view36"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintEnd_toEndOf="@+id/view29"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toBottomOf="@+id/view34" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image34"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view36"
+        app:layout_constraintStart_toStartOf="@+id/view36"
+        app:layout_constraintTop_toTopOf="@+id/view36" />
+
+    <TextView
+        android:id="@+id/textView65"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="12 Out | 10:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view36"
+        app:layout_constraintEnd_toEndOf="@+id/view36"
+        app:layout_constraintTop_toTopOf="@+id/view36" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00º C"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view36"
+        app:layout_constraintStart_toEndOf="@+id/profile_image34"
+        app:layout_constraintTop_toTopOf="@+id/view36" />
+
+    <Button
+        android:id="@+id/buttonContinue4"
+        android:layout_width="170dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/oxford_blue"
+        android:text="Carregar mais"
+        app:layout_constraintEnd_toEndOf="@+id/view29"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toBottomOf="@+id/view36"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <view
+        android:id="@+id/view45"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="315dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintEnd_toEndOf="@+id/view29"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="@+id/view29" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image41"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view45"
+        app:layout_constraintStart_toStartOf="@+id/view45"
+        app:layout_constraintTop_toTopOf="@+id/view45" />
+
+    <TextView
+        android:id="@+id/textView84"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00º C"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view45"
+        app:layout_constraintStart_toEndOf="@+id/profile_image41"
+        app:layout_constraintTop_toTopOf="@+id/view45" />
+
+    <TextView
+        android:id="@+id/textView85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="12 Out | 10:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view45"
+        app:layout_constraintEnd_toEndOf="@+id/view45"
+        app:layout_constraintTop_toTopOf="@+id/view45" />
+
+    <view
+        android:id="@+id/view46"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintEnd_toEndOf="@+id/view29"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toBottomOf="@+id/view45" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image42"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view46"
+        app:layout_constraintStart_toStartOf="@+id/view46"
+        app:layout_constraintTop_toTopOf="@+id/view46" />
+
+    <TextView
+        android:id="@+id/textView86"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00º C"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view46"
+        app:layout_constraintStart_toEndOf="@+id/profile_image42"
+        app:layout_constraintTop_toTopOf="@+id/view46" />
+
+    <TextView
+        android:id="@+id/textView87"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="12 Out | 10:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view46"
+        app:layout_constraintEnd_toEndOf="@+id/view46"
+        app:layout_constraintTop_toTopOf="@+id/view46" />
+
+    <view
+        android:id="@+id/view47"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_toggles"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toBottomOf="@+id/view46" />
+
+    <TextView
+        android:id="@+id/textView89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00º C"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view47"
+        app:layout_constraintStart_toEndOf="@+id/profile_image43"
+        app:layout_constraintTop_toTopOf="@+id/view47" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image43"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperaturaalta"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view47"
+        app:layout_constraintStart_toStartOf="@+id/view47"
+        app:layout_constraintTop_toTopOf="@+id/view47" />
+
+    <TextView
+        android:id="@+id/textView88"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="12 Out | 10:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view47"
+        app:layout_constraintEnd_toEndOf="@+id/view47"
+        app:layout_constraintTop_toTopOf="@+id/view47" />
+
+    <Button
+        android:id="@+id/buttonContinue7"
+        android:layout_width="170dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/oxford_blue"
+        android:text="Carregar mais"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view29"
+        app:layout_constraintTop_toBottomOf="@+id/view47"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <view
+        android:id="@+id/view48"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_nav"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintBottom_toBottomOf="@+id/view29"
+        app:layout_constraintEnd_toEndOf="@+id/view29"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/homeUmiViewUmi5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi5"
+        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi5"
+        app:layout_constraintTop_toTopOf="@+id/view48"
+        app:srcCompat="@drawable/umi" />
+
+    <ImageView
+        android:id="@+id/homeConfigViewUmi5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/view48"
+        app:layout_constraintTop_toTopOf="@+id/view48"
+        app:srcCompat="@drawable/config" />
+
+    <ImageView
+        android:id="@+id/homeTempViewUmi5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/view48"
+        app:layout_constraintTop_toTopOf="@+id/view48"
+        app:srcCompat="@drawable/temp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

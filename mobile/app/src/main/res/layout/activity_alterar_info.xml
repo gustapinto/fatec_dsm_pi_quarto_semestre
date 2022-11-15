@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cultured"
     tools:context=".alterarInformacoes">
 
     <view
         android:id="@+id/view7"
         class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="409dp"
-        android:layout_height="500dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="0dp"
+        android:layout_height="560dp"
         android:background="@drawable/rounded_background"
         android:backgroundTint="@color/steel_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
         android:text="Editando: Impressora"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,9 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="Nome do dispositivo"
         android:textColor="@color/cultured"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/view7"
         app:layout_constraintTop_toTopOf="@+id/view7" />
@@ -48,70 +50,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="120dp"
         android:text="Imagem do dispositivo"
         android:textColor="@color/cultured"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/view7"
         app:layout_constraintTop_toTopOf="@+id/view7" />
 
-    <view
-        android:id="@+id/view22"
-        class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded_nav"
-        android:backgroundTint="@color/cultured"
-        app:layout_constraintBottom_toBottomOf="@+id/view7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/homeUmiViewUmi3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi3"
-        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi3"
-        app:layout_constraintTop_toTopOf="@+id/view22"
-        app:srcCompat="@drawable/umi" />
-
-    <ImageView
-        android:id="@+id/homeConfigViewUmi3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toEndOf="@+id/view22"
-        app:layout_constraintTop_toTopOf="@+id/view22"
-        app:srcCompat="@drawable/config" />
-
-    <ImageView
-        android:id="@+id/homeTempViewUmi3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/view22"
-        app:layout_constraintTop_toTopOf="@+id/view22"
-        app:srcCompat="@drawable/temp" />
-
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextTextPersonName2"
         android:layout_width="255dp"
         android:layout_height="34dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/rounded_buttons"
-        android:backgroundTint="@color/cardview_shadow_end_color"
         android:ems="10"
         android:inputType="textPersonName"
-        android:paddingStart="0dp"
+        android:paddingStart="10dp"
         android:text="Impressora"
         android:textColor="@color/cultured"
-        android:textColorHint="@color/outrageous_orange"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:textColorHint="@color/cultured"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/view7"
         app:layout_constraintTop_toTopOf="@+id/view7"
         tools:ignore="TouchTargetSizeCheck" />
@@ -120,18 +80,17 @@
         android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
         app:layout_constraintTop_toTopOf="@+id/view7"
         app:srcCompat="@drawable/editname" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image16"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="160dp"
         android:src="@drawable/celular"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
@@ -140,10 +99,10 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image17"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="160dp"
         android:src="@drawable/notebook"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
@@ -152,10 +111,10 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image18"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="160dp"
         android:src="@drawable/tablet"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
@@ -164,14 +123,104 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image23"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="160dp"
         android:src="@drawable/impressora"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintStart_toEndOf="@+id/profile_image18"
         app:layout_constraintTop_toTopOf="@+id/view7" />
+
+    <view
+        android:id="@+id/view22"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/light_blue"
+        app:layout_constraintEnd_toEndOf="@+id/view7"
+        app:layout_constraintStart_toStartOf="@+id/view7"
+        app:layout_constraintTop_toTopOf="@+id/view7" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view22"
+        app:layout_constraintStart_toStartOf="@+id/view22"
+        app:layout_constraintTop_toTopOf="@+id/view22"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Carregar Imagem"
+        android:textColor="@color/cultured"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view22"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/view22" />
+
+    <view
+        android:id="@+id/view23"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_nav"
+        android:backgroundTint="@color/cultured"
+        app:layout_constraintBottom_toBottomOf="@+id/view7"
+        app:layout_constraintEnd_toEndOf="@+id/view7"
+        app:layout_constraintStart_toStartOf="@+id/view7" />
+
+    <ImageView
+        android:id="@+id/homeConfigViewUmi3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/view23"
+        app:layout_constraintTop_toTopOf="@+id/view23"
+        app:srcCompat="@drawable/config" />
+
+    <ImageView
+        android:id="@+id/homeUmiViewUmi3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi3"
+        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi3"
+        app:layout_constraintTop_toTopOf="@+id/view23"
+        app:srcCompat="@drawable/umi" />
+
+    <ImageView
+        android:id="@+id/homeTempViewUmi3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/view23"
+        app:layout_constraintTop_toTopOf="@+id/view23"
+        app:srcCompat="@drawable/temp" />
+
+    <Button
+        android:id="@+id/buttonContinue2"
+        android:layout_width="170dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/rounded_buttons"
+        android:backgroundTint="@color/oxford_blue"
+        android:text="Continuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view7"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
