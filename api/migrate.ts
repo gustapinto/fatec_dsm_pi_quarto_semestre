@@ -11,6 +11,8 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
         DROP TABLE IF EXISTS records;
 
         DROP TABLE IF EXISTS arduinos;
+
+        DROP TABLE IF EXISTS connections;
     `
 
     const migrationsQueryString = `
@@ -27,6 +29,13 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
             humidity DECIMAL(2) NOT NULL,
             api_temperature DECIMAL(2) NOT NULL,
             arduino_code INT NOT NULL REFERENCES arduinos (code),
+            created_at TIMESTAMP NOT NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS connections (
+            id SERIAL PRIMARY KEY,
+            arduino_code INT UNIQUE NOT NULL REFERENCES arduinos (code),
+            mac_address MACADDR NOT NULL,
             created_at TIMESTAMP NOT NULL
         );
     `
