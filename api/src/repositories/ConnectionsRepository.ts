@@ -33,4 +33,25 @@ export class ConnectionsRepository extends Repository {
 
         return await this.query(queryString, [macAddress])
     }
+
+    /**
+     * Verifica se um mac address existe na tabela de conexões
+    */
+    async connectionExists(macAddress: string): Promise<boolean> {
+
+    }
+
+    /**
+     * Deleta uma conexão do banco de dados a partir do mac address e do código
+     * de arduino fornecido
+    */
+    async removeConnection(macAddress: string, arduinoCode: number|string): Promise<void> {
+        const queryString = `
+            DELETE FROM connections
+            WHERE mac_address = $1
+            AND arduino_code = $2
+        `
+
+        await
+    }
 }

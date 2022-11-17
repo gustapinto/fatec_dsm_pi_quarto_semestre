@@ -68,8 +68,14 @@ export class ConnectionsController {
     /**
      * Remove uma conexão entre o dispositivo mobile e o arduino
     */
-    @Delete()
+    @Delete(':macAddress')
     async removeConnection(req: Request, res: Response): Promise<Response<any>|void> {
+        const macAddress = req.params.macAddress as string
 
+        try {
+
+        } catch(error: any) {
+
+        }
     }
 }
