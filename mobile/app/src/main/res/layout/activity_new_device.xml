@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cultured"
-    tools:context=".newDispositivos">
+    tools:context=".NewDevice">
 
     <view
         android:id="@+id/view2"
@@ -123,7 +123,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/celular"
+        android:src="@drawable/phone"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintEnd_toEndOf="@+id/view26"
@@ -266,7 +266,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/homeConfigViewUmi4"
+        android:id="@+id/homeConfigViewNewDispo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
@@ -276,24 +276,24 @@
         app:srcCompat="@drawable/config" />
 
     <ImageView
-        android:id="@+id/homeTempViewUmi4"
+        android:id="@+id/homeTempViewNewDispo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/view28"
         app:layout_constraintTop_toTopOf="@+id/view28"
-        app:srcCompat="@drawable/temp" />
+        app:srcCompat="@drawable/temperature" />
 
     <ImageView
-        android:id="@+id/homeUmiViewUmi4"
+        android:id="@+id/homeUmiViewNewDispo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi4"
-        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi4"
+        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewNewDispo"
+        app:layout_constraintStart_toEndOf="@+id/homeTempViewNewDispo"
         app:layout_constraintTop_toTopOf="@+id/view28"
-        app:srcCompat="@drawable/umi" />
+        app:srcCompat="@drawable/moisture" />
 
     <TextView
         android:id="@+id/textView50"

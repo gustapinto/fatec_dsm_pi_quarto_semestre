@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".homeTemp">
+    android:background="@color/cultured"
+    tools:context=".HomeMoisture">
 
     <view
-        android:id="@+id/view13"
+        android:id="@+id/view10"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="0dp"
         android:layout_height="280dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:background="@drawable/rounded_background"
-        android:backgroundTint="@color/red_orange"
+        android:backgroundTint="@color/usafa_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -43,20 +43,20 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="50dp"
-        android:layout_height="130dp"
+        android:id="@+id/imageView5"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:layout_marginTop="110dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/termometro" />
+        app:srcCompat="@drawable/moisture_icon" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textView38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00ºC"
@@ -64,42 +64,43 @@
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="temperatura"
-        android:textColor="@color/outrageous_orange"
+        android:text="umidade"
+        android:textColor="@color/usafa_blue"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view13"
-        app:srcCompat="@drawable/iconshomes" />
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Últimos registros"
         android:textColor="@color/cultured"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/view13" />
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/view10" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view10"
+        app:srcCompat="@drawable/icons_homes" />
 
     <view
-        android:id="@+id/view14"
+        android:id="@+id/view19"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="75dp"
         android:layout_height="128dp"
@@ -107,11 +108,11 @@
         android:layout_marginTop="75dp"
         android:background="@drawable/rounded_groups"
         android:backgroundTint="@color/cultured"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view13" />
+        app:layout_constraintStart_toStartOf="@+id/view10"
+        app:layout_constraintTop_toTopOf="@+id/view10" />
 
     <view
-        android:id="@+id/view15"
+        android:id="@+id/view12"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="75dp"
         android:layout_height="128dp"
@@ -119,11 +120,11 @@
         android:layout_marginTop="75dp"
         android:background="@drawable/rounded_groups"
         android:backgroundTint="@color/cultured"
-        app:layout_constraintStart_toEndOf="@+id/view14"
-        app:layout_constraintTop_toTopOf="@+id/view13" />
+        app:layout_constraintStart_toEndOf="@+id/view19"
+        app:layout_constraintTop_toTopOf="@+id/view10" />
 
     <view
-        android:id="@+id/view16"
+        android:id="@+id/view11"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="75dp"
         android:layout_height="128dp"
@@ -131,11 +132,11 @@
         android:layout_marginTop="75dp"
         android:background="@drawable/rounded_groups"
         android:backgroundTint="@color/cultured"
-        app:layout_constraintStart_toEndOf="@+id/view15"
-        app:layout_constraintTop_toTopOf="@+id/view13" />
+        app:layout_constraintStart_toEndOf="@+id/view12"
+        app:layout_constraintTop_toTopOf="@+id/view10" />
 
     <view
-        android:id="@+id/view17"
+        android:id="@+id/view20"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="75dp"
         android:layout_height="128dp"
@@ -143,189 +144,188 @@
         android:layout_marginTop="75dp"
         android:background="@drawable/rounded_groups"
         android:backgroundTint="@color/cultured"
-        app:layout_constraintStart_toEndOf="@+id/view16"
-        app:layout_constraintTop_toTopOf="@+id/view13" />
+        app:layout_constraintStart_toEndOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view10" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image20"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/temperature_low"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/view19"
+        app:layout_constraintStart_toStartOf="@+id/view19"
+        app:layout_constraintTop_toTopOf="@+id/view19" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image19"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/temperature_low"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/view20"
+        app:layout_constraintStart_toStartOf="@+id/view20"
+        app:layout_constraintTop_toTopOf="@+id/view20" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image22"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/temperature_low"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view11" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image21"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/temperature_low"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/view12"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toTopOf="@+id/view12" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="00ºC"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view19"
+        app:layout_constraintStart_toStartOf="@+id/view19"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image20" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="00ºC"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view12"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image21" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="00ºC"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image22" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="00ºC"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view20"
+        app:layout_constraintStart_toStartOf="@+id/view20"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image19" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00/00/0000"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/view20"
+        app:layout_constraintStart_toStartOf="@+id/view20"
+        app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00/00/0000"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00/00/0000"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/view12"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00/00/0000"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/view19"
+        app:layout_constraintStart_toStartOf="@+id/view19"
+        app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
     <view
-        android:id="@+id/view18"
+        android:id="@+id/view5"
         class="androidx.appcompat.widget.ActionMenuView"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_nav"
         android:backgroundTint="@color/cultured"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view13"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/temperaturabaixa"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/view14"
-        app:layout_constraintStart_toStartOf="@+id/view14"
-        app:layout_constraintTop_toTopOf="@+id/view14" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image12"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/temperaturabaixa"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/view15"
-        app:layout_constraintStart_toStartOf="@+id/view15"
-        app:layout_constraintTop_toTopOf="@+id/view15" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image13"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/temperaturabaixa"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/view16"
-        app:layout_constraintStart_toStartOf="@+id/view16"
-        app:layout_constraintTop_toTopOf="@+id/view16" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/temperaturabaixa"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/view17"
-        app:layout_constraintStart_toStartOf="@+id/view17"
-        app:layout_constraintTop_toTopOf="@+id/view17" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="00ºC"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/view14"
-        app:layout_constraintStart_toStartOf="@+id/view14"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image11" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="00ºC"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/view15"
-        app:layout_constraintStart_toStartOf="@+id/view15"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image12" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="00ºC"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/view16"
-        app:layout_constraintStart_toStartOf="@+id/view16"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image13" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="00ºC"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/view17"
-        app:layout_constraintStart_toStartOf="@+id/view17"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image14" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00/00/0000"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/view17"
-        app:layout_constraintStart_toStartOf="@+id/view17"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00/00/0000"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/view16"
-        app:layout_constraintStart_toStartOf="@+id/view16"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00/00/0000"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/view15"
-        app:layout_constraintStart_toStartOf="@+id/view15"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00/00/0000"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/view14"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/view14"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view10" />
 
     <ImageView
-        android:id="@+id/homeTempViewTemp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/view18"
-        app:layout_constraintTop_toTopOf="@+id/view18"
-        app:srcCompat="@drawable/temp" />
-
-    <ImageView
-        android:id="@+id/homeUmiViewTemp"
+        android:id="@+id/homeUmiViewUmi"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/view18"
-        app:layout_constraintStart_toStartOf="@+id/view18"
-        app:layout_constraintTop_toTopOf="@+id/view18"
-        app:srcCompat="@drawable/umi" />
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/moisture" />
 
     <ImageView
-        android:id="@+id/homeCofigViewTemp"
+        android:id="@+id/homeConfigViewUmi"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/view18"
-        app:layout_constraintTop_toTopOf="@+id/view18"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
         app:srcCompat="@drawable/config" />
+
+    <ImageView
+        android:id="@+id/homeTempViewUmi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/temperature" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

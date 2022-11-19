@@ -3,22 +3,21 @@ package com.example.project_pi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_home_temp.*
-import kotlinx.android.synthetic.main.activity_inicio.*
+import kotlinx.android.synthetic.main.activity_home_thermometer.*
 
-class homeTemp : AppCompatActivity() {
+class HomeThermometer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_temp)
+        setContentView(R.layout.activity_home_thermometer)
 
         homeUmiViewTemp.setOnClickListener {
-            val intent = Intent(applicationContext, homeUmidade::class.java)
+            val intent = Intent(applicationContext, HomeMoisture::class.java)
 
             startActivity(intent)
         }
 
         homeCofigViewTemp.setOnClickListener {
-            val intent = Intent(applicationContext, Config::class.java)
+            val intent = Intent(applicationContext, Settings::class.java)
 
             startActivity(intent)
         }

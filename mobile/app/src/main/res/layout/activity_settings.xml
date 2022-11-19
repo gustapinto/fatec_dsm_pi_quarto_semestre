@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cultured"
-    tools:context=".Config">
+    tools:context=".Settings">
 
     <View
         android:id="@+id/view3"
@@ -24,7 +24,7 @@
         android:layout_width="164dp"
         android:layout_height="164dp"
         android:layout_marginTop="40dp"
-        android:src="@drawable/impressora3d"
+        android:src="@drawable/printer_3d"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,8 +52,10 @@
         android:layout_marginTop="70dp"
         android:background="@drawable/rounded_groups"
         android:backgroundTint="@color/cultured"
+        android:onClick="alterView"
         app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <view
         android:id="@+id/view8"
@@ -103,17 +105,17 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/homeUmiViewUmi2"
+        android:id="@+id/homeUmiViewConfig"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi2"
-        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi2"
+        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewConfig"
+        app:layout_constraintStart_toEndOf="@+id/homeTempViewConfig"
         app:layout_constraintTop_toTopOf="@+id/view21"
-        app:srcCompat="@drawable/umi" />
+        app:srcCompat="@drawable/moisture" />
 
     <ImageView
-        android:id="@+id/homeConfigViewUmi2"
+        android:id="@+id/homeConfigViewConfig"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
@@ -123,27 +125,27 @@
         app:srcCompat="@drawable/config" />
 
     <ImageView
-        android:id="@+id/homeTempViewUmi2"
+        android:id="@+id/homeTempViewConfig"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/view21"
         app:layout_constraintTop_toTopOf="@+id/view21"
-        app:srcCompat="@drawable/temp" />
+        app:srcCompat="@drawable/temperature" />
 
     <ImageView
-        android:id="@+id/addDispositivo"
+        android:id="@+id/newDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="@+id/view8"
         app:layout_constraintStart_toStartOf="@+id/view8"
         app:layout_constraintTop_toTopOf="@+id/view8"
-        app:srcCompat="@drawable/adddispo" />
+        app:srcCompat="@drawable/add_device" />
 
     <ImageView
-        android:id="@+id/alterinfo"
+        android:id="@+id/alterarInformacoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
@@ -153,7 +155,7 @@
         app:srcCompat="@drawable/edit" />
 
     <ImageView
-        android:id="@+id/buttonHistory"
+        android:id="@+id/historico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -174,7 +176,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view6"
         app:layout_constraintStart_toStartOf="@+id/view6"
-        app:layout_constraintTop_toBottomOf="@+id/alterinfo" />
+        app:layout_constraintTop_toBottomOf="@+id/alterarInformacoes" />
 
     <TextView
         android:id="@+id/textView27"
@@ -188,7 +190,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view8"
         app:layout_constraintStart_toStartOf="@+id/view8"
-        app:layout_constraintTop_toBottomOf="@+id/addDispositivo" />
+        app:layout_constraintTop_toBottomOf="@+id/newDispositivo" />
 
     <TextView
         android:id="@+id/textView29"
@@ -202,6 +204,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view9"
         app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHistory" />
+        app:layout_constraintTop_toBottomOf="@+id/historico" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

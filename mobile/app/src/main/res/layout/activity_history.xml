@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cultured"
-    tools:context=".historico">
+    tools:context=".History">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image27"
@@ -13,7 +13,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/impressora3d"
+        android:src="@drawable/printer_3d"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/temperaturaalta"
+        android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/view30"
@@ -185,7 +185,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/temperaturaalta"
+        android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/view34"
@@ -233,7 +233,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/temperaturaalta"
+        android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/view36"
@@ -295,7 +295,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/temperaturaalta"
+        android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/view45"
@@ -343,7 +343,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/temperaturaalta"
+        android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/view46"
@@ -403,7 +403,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/temperaturaalta"
+        android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/view47"
@@ -447,17 +447,17 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/homeUmiViewUmi5"
+        android:id="@+id/homeUmiViewHistory"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi5"
-        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi5"
+        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewHistory"
+        app:layout_constraintStart_toEndOf="@+id/homeTempViewHistory"
         app:layout_constraintTop_toTopOf="@+id/view48"
-        app:srcCompat="@drawable/umi" />
+        app:srcCompat="@drawable/moisture" />
 
     <ImageView
-        android:id="@+id/homeConfigViewUmi5"
+        android:id="@+id/homeConfigViewHistory"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
@@ -467,13 +467,13 @@
         app:srcCompat="@drawable/config" />
 
     <ImageView
-        android:id="@+id/homeTempViewUmi5"
+        android:id="@+id/homeTempViewHistory"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/view48"
         app:layout_constraintTop_toTopOf="@+id/view48"
-        app:srcCompat="@drawable/temp" />
+        app:srcCompat="@drawable/temperature" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

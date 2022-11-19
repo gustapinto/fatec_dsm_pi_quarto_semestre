@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cultured"
-    tools:context=".alterarInformacoes">
+    tools:context=".ChangeInformation">
 
     <view
         android:id="@+id/view7"
@@ -83,7 +83,7 @@
         android:layout_marginTop="70dp"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
         app:layout_constraintTop_toTopOf="@+id/view7"
-        app:srcCompat="@drawable/editname" />
+        app:srcCompat="@drawable/edit_name" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image16"
@@ -91,7 +91,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="160dp"
-        android:src="@drawable/celular"
+        android:src="@drawable/phone"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintStart_toStartOf="@+id/view7"
@@ -127,7 +127,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="160dp"
-        android:src="@drawable/impressora"
+        android:src="@drawable/printer"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintStart_toEndOf="@+id/profile_image18"
@@ -180,7 +180,7 @@
         app:layout_constraintStart_toStartOf="@+id/view7" />
 
     <ImageView
-        android:id="@+id/homeConfigViewUmi3"
+        android:id="@+id/homeConfigViewAlterInfo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
@@ -190,33 +190,33 @@
         app:srcCompat="@drawable/config" />
 
     <ImageView
-        android:id="@+id/homeUmiViewUmi3"
+        android:id="@+id/homeUmiViewAlterInfo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewUmi3"
-        app:layout_constraintStart_toEndOf="@+id/homeTempViewUmi3"
+        app:layout_constraintEnd_toStartOf="@+id/homeConfigViewAlterInfo"
+        app:layout_constraintStart_toEndOf="@+id/homeTempViewAlterInfo"
         app:layout_constraintTop_toTopOf="@+id/view23"
-        app:srcCompat="@drawable/umi" />
+        app:srcCompat="@drawable/moisture" />
 
     <ImageView
-        android:id="@+id/homeTempViewUmi3"
+        android:id="@+id/homeTempViewAlterInfo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/view23"
         app:layout_constraintTop_toTopOf="@+id/view23"
-        app:srcCompat="@drawable/temp" />
+        app:srcCompat="@drawable/temperature" />
 
     <Button
-        android:id="@+id/buttonContinue2"
+        android:id="@+id/buttonSaveViewAlterInfo"
         android:layout_width="170dp"
         android:layout_height="38dp"
         android:layout_marginTop="380dp"
         android:background="@drawable/rounded_buttons"
         android:backgroundTint="@color/oxford_blue"
-        android:text="Continuar"
+        android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

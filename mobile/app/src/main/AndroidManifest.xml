@@ -14,31 +14,31 @@
         android:theme="@style/Theme.Projectpi"
         tools:targetApi="31">
         <activity
-            android:name=".historico"
+            android:name=".History"
             android:exported="false" />
         <activity
-            android:name=".addDispositivos"
+            android:name=".AddDevice"
             android:exported="false" />
         <activity
-            android:name=".alterarInformacoes"
+            android:name=".ChangeInformation"
             android:exported="false" />
         <activity
-            android:name=".Config"
+            android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".homeUmidade"
+            android:name=".HomeMoisture"
             android:exported="false" />
         <activity
-            android:name=".homeTemp"
+            android:name=".HomeThermometer"
             android:exported="false" />
         <activity
-            android:name=".newDispositivos"
+            android:name=".NewDevice"
             android:exported="false" />
         <activity
             android:name=".testeImagem"
             android:exported="false" />
         <activity
-            android:name=".inicio"
+            android:name=".Init"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
