@@ -1,5 +1,4 @@
-import { ClassMiddleware, Controller, Delete, Get, Post } from "@overnightjs/core";
-import { NONAME } from "dns";
+import { Controller, Delete, Get, Middleware, Post } from "@overnightjs/core";
 import { Request, Response } from "express";
 import AuthMiddleware from "../middlewares/AuthMiddleware";
 import { ArduinoRepository } from "../repositories/ArduinoRepository";
@@ -10,7 +9,6 @@ import { ConnectionsRepository } from "../repositories/ConnectionsRepository";
  * mobile
 */
 @Controller('api/connections')
-@ClassMiddleware([AuthMiddleware])
 export class ConnectionsController {
     private arduinoRepository: ArduinoRepository
     private connectionsRepository: ConnectionsRepository
@@ -68,14 +66,36 @@ export class ConnectionsController {
     /**
      * Remove uma conexão entre o dispositivo mobile e o arduino
     */
-    @Delete(':macAddress')
+    @Delete()
+    @Middleware([AuthMiddleware])
     async removeConnection(req: Request, res: Response): Promise<Response<any>|void> {
+        /**
+         * TODO
+        */
+    }
+
+    /**
+     * Verifica se existe uma conexão existente para o mac address passado
+    */
+    @Get('check/:macAddress')
+    async verifyIfConnectionExists(req: Request, res: Response): Promise<Response<any>|void> {
         const macAddress = req.params.macAddress as string
 
         try {
+            const connectionExists = await this.connectionsRepository.exists(macAddress)
+            const message = connectionExists
+                ? `A connection for ${macAddress} exists`
+                : `The is no connection for ${macAddress}`
 
+            return res.status(200).json({
+                result: connectionExists,
+                message: message,
+            })
         } catch(error: any) {
-
+            return res.status(500).json({
+                result: null,
+                message: error.message,
+            })
         }
     }
 }

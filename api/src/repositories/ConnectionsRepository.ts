@@ -37,8 +37,16 @@ export class ConnectionsRepository extends Repository {
     /**
      * Verifica se um mac address existe na tabela de conexões
     */
-    async connectionExists(macAddress: string): Promise<boolean> {
+    async exists(macAddress: string, arduinoCode?: number|string): Promise<boolean> {
+        let queryString = `SELECT * FROM connections WHERE mac_address = $1`
 
+        if (typeof arduinoCode != 'undefined') {
+            queryString += ' AND arduino_code = $2'
+        }
+
+        const result = await this.query(queryString, [macAddress])
+
+        return result.length > 0
     }
 
     /**
@@ -52,6 +60,8 @@ export class ConnectionsRepository extends Repository {
             AND arduino_code = $2
         `
 
-        await
+        /**
+         * TODO
+        */
     }
 }
