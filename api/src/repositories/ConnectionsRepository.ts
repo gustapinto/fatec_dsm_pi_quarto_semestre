@@ -1,3 +1,4 @@
+import { ConnectionDoesNotExistsException } from "../exceptions/ConnectionDoesNotExistsException"
 import { Repository } from "./Repository"
 
 /**
@@ -39,12 +40,15 @@ export class ConnectionsRepository extends Repository {
     */
     async exists(macAddress: string, arduinoCode?: number|string): Promise<boolean> {
         let queryString = `SELECT * FROM connections WHERE mac_address = $1`
+        let params: Array<string|number> = [macAddress]
 
         if (typeof arduinoCode != 'undefined') {
             queryString += ' AND arduino_code = $2'
+
+            params.push(arduinoCode)
         }
 
-        const result = await this.query(queryString, [macAddress])
+        const result = await this.query(queryString, params)
 
         return result.length > 0
     }
@@ -54,14 +58,16 @@ export class ConnectionsRepository extends Repository {
      * de arduino fornecido
     */
     async removeConnection(macAddress: string, arduinoCode: number|string): Promise<void> {
+        if (!await this.exists(macAddress, arduinoCode)) {
+            throw new ConnectionDoesNotExistsException(macAddress, arduinoCode)
+        }
+
         const queryString = `
             DELETE FROM connections
             WHERE mac_address = $1
             AND arduino_code = $2
         `
 
-        /**
-         * TODO
-        */
+        await this.query(queryString, [macAddress, arduinoCode])
     }
 }

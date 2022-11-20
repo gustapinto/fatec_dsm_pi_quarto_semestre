@@ -1,5 +1,6 @@
 import { Controller, Delete, Get, Middleware, Post } from "@overnightjs/core";
 import { Request, Response } from "express";
+import { ConnectionDoesNotExistsException } from "../exceptions/ConnectionDoesNotExistsException";
 import AuthMiddleware from "../middlewares/AuthMiddleware";
 import { ArduinoRepository } from "../repositories/ArduinoRepository";
 import { ConnectionsRepository } from "../repositories/ConnectionsRepository";
@@ -69,9 +70,31 @@ export class ConnectionsController {
     @Delete()
     @Middleware([AuthMiddleware])
     async removeConnection(req: Request, res: Response): Promise<Response<any>|void> {
-        /**
-         * TODO
-        */
+        const macAddress = req.body.macAddress as string
+        const arduinoCode = req.body.arduinoCode as string
+
+        console.log(macAddress, arduinoCode)
+
+        try {
+            await this.connectionsRepository.removeConnection(macAddress, arduinoCode)
+
+            return res.status(200).json({
+                result: null,
+                message: `Success deleting the connection between ${macAddress} and ${arduinoCode}`
+            })
+        } catch(error: any) {
+            if (error instanceof ConnectionDoesNotExistsException) {
+                return res.status(400).json({
+                    result: null,
+                    message: `The is no connection between ${macAddress} and ${arduinoCode}`,
+                })
+            }
+
+            return res.status(500).json({
+                result: null,
+                message: error.message,
+            })
+        }
     }
 
     /**
