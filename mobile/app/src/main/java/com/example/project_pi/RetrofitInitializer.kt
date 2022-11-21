@@ -2,6 +2,7 @@ package com.example.project_pi
 
 import com.example.project_pi.config.Config
 import com.example.project_pi.services.AuthService
+import com.example.project_pi.services.ConnectionService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.example.project_pi.services.ThermostatService
@@ -18,5 +19,9 @@ class RetrofitInitializer {
 
         fun authService() : AuthService {
                 return retrofit.create(AuthService::class.java)
+        }
+
+        fun connectionService() : ConnectionService {
+                return retrofit.create(ConnectionService::class.java)
         }
 }
