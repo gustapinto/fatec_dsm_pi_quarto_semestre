@@ -1,4 +1,4 @@
-package com.example.project_pi
+package com.example.project_pi.services
 
 import retrofit2.http.GET
 
