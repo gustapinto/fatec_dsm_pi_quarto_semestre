@@ -35,7 +35,7 @@ import { PostgresqlDatabase } from "./src/database/PostgresqlDatabase";
         CREATE TABLE IF NOT EXISTS connections (
             id SERIAL PRIMARY KEY,
             arduino_code INT UNIQUE NOT NULL REFERENCES arduinos (code),
-            mac_address MACADDR NOT NULL,
+            android_id VARCHAR(16) NOT NULL,
             created_at TIMESTAMP NOT NULL
         );
     `

@@ -9,38 +9,38 @@ export class ConnectionsRepository extends Repository {
     /**
      * Cria uma nova conexão entre o dispositivo mobile e o arduino
     */
-    async createConnection(macAddress: string, arduinoCode: number|string): Promise<void> {
+    async createConnection(androidId: string, arduinoCode: number|string): Promise<void> {
         const now = new Date()
         const queryString = `
-            INSERT INTO connections (arduino_code, mac_address, created_at)
+            INSERT INTO connections (arduino_code, android_id, created_at)
             VALUES ($1, $2, $3)
         `
 
-        await this.query(queryString, [arduinoCode, macAddress, now])
+        await this.query(queryString, [arduinoCode, androidId, now])
     }
 
     /**
      * Obtém todos os arduinos conectados em um dispositivo mobile
     */
-    async getArduinosByConnectionMacAddress(macAddress: string): Promise<Array<any>> {
+    async getArduinosByConnectionAndroidId(androidId: string): Promise<Array<any>> {
         const queryString = `
             SELECT a.code AS "arduinoCode",
                 a.name AS "arduinoName",
-                c.mac_address AS "macAddress"
+                c.android_id AS "androidId"
             FROM connections c
             JOIN arduinos a ON a.code = c.arduino_code
-            WHERE c.mac_address = $1
+            WHERE c.android_id = $1
         `
 
-        return await this.query(queryString, [macAddress])
+        return await this.query(queryString, [androidId])
     }
 
     /**
      * Verifica se um mac address existe na tabela de conexões
     */
-    async exists(macAddress: string, arduinoCode?: number|string): Promise<boolean> {
-        let queryString = `SELECT * FROM connections WHERE mac_address = $1`
-        let params: Array<string|number> = [macAddress]
+    async exists(androidId: string, arduinoCode?: number|string): Promise<boolean> {
+        let queryString = `SELECT * FROM connections WHERE android_id = $1`
+        let params: Array<string|number> = [androidId]
 
         if (typeof arduinoCode != 'undefined') {
             queryString += ' AND arduino_code = $2'
@@ -57,17 +57,17 @@ export class ConnectionsRepository extends Repository {
      * Deleta uma conexão do banco de dados a partir do mac address e do código
      * de arduino fornecido
     */
-    async removeConnection(macAddress: string, arduinoCode: number|string): Promise<void> {
-        if (!await this.exists(macAddress, arduinoCode)) {
-            throw new ConnectionDoesNotExistsException(macAddress, arduinoCode)
+    async removeConnection(androidId: string, arduinoCode: number|string): Promise<void> {
+        if (!await this.exists(androidId, arduinoCode)) {
+            throw new ConnectionDoesNotExistsException(androidId, arduinoCode)
         }
 
         const queryString = `
             DELETE FROM connections
-            WHERE mac_address = $1
+            WHERE android_id = $1
             AND arduino_code = $2
         `
 
-        await this.query(queryString, [macAddress, arduinoCode])
+        await this.query(queryString, [androidId, arduinoCode])
     }
 }
