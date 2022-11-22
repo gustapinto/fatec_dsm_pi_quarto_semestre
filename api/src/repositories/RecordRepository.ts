@@ -8,13 +8,27 @@ export class RecordRepository extends Repository {
     /**
      * Obtém os registros de temperatura para os códigos de arduino passados
     */
-    async getRecordsWithArduinoCodes(codes: Array<number>): Promise<Array<any>> {
-        const queryString = `
-            SELECT * FROM records
-            WHERE arduino_code = ANY($1)
-        `;
+    async getRecordsWithArduinoCodes(codes: Array<number>, startDate?: Date, limit?: number): Promise<Array<any>> {
+        let queryString = 'SELECT * FROM records WHERE arduino_code = ANY($1)'
+        let params: Array<Array<number>|number|Date> = [codes]
 
-        return await this.query(queryString, [codes])
+        if (startDate) {
+            queryString += ' AND created_at >= $2'
+            params.push(startDate)
+        }
+
+        // Sempre vai ordenar a listagem pelos registros mais novos,
+        // independente de quais filtros são passados
+        queryString += ' ORDER BY created_at DESC'
+
+        if (limit) {
+            const limitPosition = startDate ? '$3' : '$2'
+
+            queryString += ` LIMIT ${limitPosition}`
+            params.push(limit)
+        }
+
+        return await this.query(queryString, params)
     }
 
     /**
@@ -23,13 +37,7 @@ export class RecordRepository extends Repository {
      * depois da data passada
     */
     async getRecordsWithArduinoCodesAndStartDate(codes: Array<number>, startDate: Date): Promise<Array<any>> {
-        const queryString = `
-            SELECT * FROM records
-            WHERE arduino_code = ANY($1)
-            AND created_at >= $2
-        `;
-
-        return await this.query(queryString, [codes, startDate])
+        return await this.getRecordsWithArduinoCodes(codes, startDate)
     }
 
     /**
@@ -59,5 +67,14 @@ export class RecordRepository extends Repository {
         const queryString = `DELETE FROM records WHERE arduino_code = $1`
 
         await this.query(queryString, [arduinoCode])
+    }
+
+    /**
+     * Obtém o último registro criado
+     */
+    async getLastRecord(arduinoCodes: Array<number>): Promise<object|null> {
+        const result = await this.getRecordsWithArduinoCodes(arduinoCodes, undefined, 1)
+
+        return result ? result[0] : null
     }
 }

@@ -31,9 +31,12 @@ export class RecordController {
     @Get('/')
     async getRecords(req: Request, res: Response): Promise<Response<any>|void> {
         const codes = this.getArduinoCodesFromParams(req.query.arduinos as Array<string> | string);
+        const limit = req.query.limit as number | undefined
+
+        console.log(limit)
 
         try {
-            const records = await this.repository.getRecordsWithArduinoCodes(codes)
+            const records = await this.repository.getRecordsWithArduinoCodes(codes, undefined, limit)
 
             return res.status(200).json({
                 result: records,
@@ -56,10 +59,11 @@ export class RecordController {
         const temperature = body.temperature as number
         const humidity= body.humidity as number
         const arduinoCode = body.arduinoCode as number
-        const weatherData = await this.extractor.getWeatherData()
-        const apiTemperature = this.parser.getTemperature(weatherData)
 
         try {
+            const weatherData = await this.extractor.getWeatherData()
+            const apiTemperature = this.parser.getTemperature(weatherData)
+
             await this.repository.createRecord(temperature, humidity, apiTemperature, arduinoCode)
 
             return res.status(200).json({
@@ -94,6 +98,37 @@ export class RecordController {
             return res.status(500).json({
                 result: null,
                 message: error.message
+            })
+        }
+    }
+
+    /**
+     * Obtém o último registro criado pelos rduinos passados
+    */
+    @Get('last')
+    async getLastRecord(req: Request, res: Response): Promise<Response<any>|void> {
+        const arduinos = this.getArduinoCodesFromParams(req.query.arduinos as Array<string> | string)
+
+        try {
+            const result = await this.repository.getLastRecord(arduinos)
+
+            console.log(result)
+
+            if (!result) {
+                return res.status(404).json({
+                    result: null,
+                    message: 'There is no record'
+                })
+            }
+
+            return res.status(200).json({
+                result: result,
+                message: '',
+            })
+        } catch(error: any) {
+            return res.status(500).json({
+                result: null,
+                message: error.message,
             })
         }
     }
