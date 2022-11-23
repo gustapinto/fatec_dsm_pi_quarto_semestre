@@ -1,1 +1,52 @@
-<mxfile host="app.diagrams.net" modified="2022-11-23T00:36:53.774Z" agent="5.0 (X11; Ubuntu)" version="20.6.0" etag="6igubRU__ZAS5HFWDqGo" type="github"><diagram id="BJ9x76-hTBLejaMrOKNh">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-11-23T00:59:28.941Z" agent="5.0 (X11; Ubuntu)" version="20.6.0" etag="I7PNSxWDv2sTNCGWfVqx" type="github">
+  <diagram id="OUnZG2sQSTLyandpwI3y" name="Página-1">
+    <mxGraphModel dx="976" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RitfqCKXOSJUJVownwWm-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="RitfqCKXOSJUJVownwWm-1" target="RitfqCKXOSJUJVownwWm-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="RitfqCKXOSJUJVownwWm-1" target="RitfqCKXOSJUJVownwWm-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-11" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="RitfqCKXOSJUJVownwWm-1" target="RitfqCKXOSJUJVownwWm-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-13" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="RitfqCKXOSJUJVownwWm-1" target="RitfqCKXOSJUJVownwWm-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="RitfqCKXOSJUJVownwWm-1" target="RitfqCKXOSJUJVownwWm-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-18" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="RitfqCKXOSJUJVownwWm-1" target="RitfqCKXOSJUJVownwWm-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-1" value="Usuário" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-4" value="&lt;div&gt;Cadastrar um&lt;/div&gt;&lt;div&gt;sensor no aplicativo&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-5" value="Visualizar a temperatura atual do sensor" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="220" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-7" value="Visualizar a umidade atual do setor" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="290" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-12" value="&lt;div&gt;Remover um&lt;/div&gt;&lt;div&gt;sensor do aplicativo&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="70" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-14" value="&lt;div&gt;Atualizar os ddos&lt;/div&gt;&lt;div&gt;de um&lt;/div&gt;&lt;div&gt;sensor do aplicativo&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="140" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-15" value="Visualizar o histórico de temperatura do sensor" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="360" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RitfqCKXOSJUJVownwWm-17" value="Visualizar o histórico de umidade do sensor" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="430" width="150" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
