@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_init.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class Init : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,14 +35,39 @@ class Init : AppCompatActivity() {
     }
 
     fun handleCheckConnectionResponse(response: GenericResponse) {
-        println(response.result)
-        println(response.message)
         val deviceAlreadyHasConnections = response.result!! as Boolean
 
         if (deviceAlreadyHasConnections) {
+            /**
+             * TODO -> Obter a lista de arduinos usando um caller, pega o primeiro arduino e usar ele
+             *         para fazer login
+             * */
+
+            val ctx = this
+            val caller = RetrofitInitializer()
+                .()
+                .hasConnections(Config.getAndroidId(ctx))
+
+            caller.enqueue(object : Callback<GenericResponse> {
+                override fun onResponse(call: Call<GenericResponse>, response: Response<GenericResponse>) {
+                    ctx.handleRequestOfListPlates(response.body()!!)
+                }
+
+                override fun onFailure(call: Call<GenericResponse>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+            })
+
             startActivity(Intent(this, HomeThermometer::class.java))
         } else {
             startActivity(Intent(this, NewDevice::class.java))
         }
     }
+
+    fun handleRequestOfListPlates(response: GenericResponse){
+        val listPlates = response.result!! as Array<Objects>
+
+        println(listPlates)
+    }
+
 }
