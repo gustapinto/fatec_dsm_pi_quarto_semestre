@@ -1,6 +1,7 @@
 package com.example.project_pi
 
 import com.example.project_pi.config.Config
+import com.example.project_pi.services.ArduinoService
 import com.example.project_pi.services.AuthService
 import com.example.project_pi.services.ConnectionService
 import retrofit2.Retrofit
@@ -23,5 +24,9 @@ class RetrofitInitializer {
 
         fun connectionService() : ConnectionService {
                 return retrofit.create(ConnectionService::class.java)
+        }
+
+        fun arduinoService() : ArduinoService {
+                return retrofit.create(ArduinoService::class.java)
         }
 }

@@ -182,7 +182,7 @@
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txtNome"
         android:layout_width="210dp"
         android:layout_height="34dp"
         android:layout_marginStart="10dp"
@@ -201,7 +201,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/txtCodigo"
         android:layout_width="210dp"
         android:layout_height="34dp"
         android:layout_marginStart="10dp"
@@ -216,7 +216,7 @@
         android:textColorHint="@color/oxford_blue"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/view27"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
@@ -225,9 +225,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:src="@drawable/edit_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNome"
+        app:layout_constraintStart_toStartOf="@+id/txtNome"
+        app:layout_constraintTop_toTopOf="@+id/txtNome"
         app:layout_constraintVertical_bias="0.523" />
 
     <ImageView
@@ -236,12 +236,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:src="@drawable/edit_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName4"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtCodigo"
+        app:layout_constraintStart_toStartOf="@+id/txtCodigo"
+        app:layout_constraintTop_toTopOf="@+id/txtCodigo" />
 
     <Button
-        android:id="@+id/buttonContinue3"
+        android:id="@+id/btnAdicionar"
         android:layout_width="170dp"
         android:layout_height="38dp"
         android:layout_marginTop="420dp"
