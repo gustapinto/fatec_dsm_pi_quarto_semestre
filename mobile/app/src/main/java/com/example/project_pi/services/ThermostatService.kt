@@ -9,8 +9,11 @@ import retrofit2.http.Header
 
 interface ThermostatService {
     @GET("record/last")
-    fun getLastRecord(@Query("arduinos") arduinoCodes: Array<Integer>, @Header("Authorization") token: String): Call<SingleRecordResponse>
+    fun getLastRecord(@Query("arduinos") arduinoCodes: Array<Number>, @Header("Authorization") token: String): Call<SingleRecordResponse>
 
     @GET("record")
-    fun getAllRecords(@Query("arduinos") arduinoCodes: Array<Integer>, @Header("Authorization") token: String): Call<MultipleRecordResponse>
+    fun getAllRecords(@Query("arduinos") arduinoCodes: Array<Number>, @Header("Authorization") token: String): Call<MultipleRecordResponse>
+
+    @GET("record")
+    fun getRecordsWithLimits(@Query("arduinos") arduinoCodes: Array<Number>, @Query("limit") limit: Number, @Header("Authorization") token: String): Call<MultipleRecordResponse>
 }

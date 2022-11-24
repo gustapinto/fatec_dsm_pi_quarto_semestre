@@ -1,8 +1,9 @@
 package com.example.project_pi
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.project_pi.dataclasses.NewArduinoPayload
+import com.example.project_pi.services.callbacks.NewArduinoCallback
 import kotlinx.android.synthetic.main.activity_new_device.*
 
 class NewDevice : AppCompatActivity() {
@@ -10,22 +11,15 @@ class NewDevice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_device)
 
-        homeTempViewNewDispo.setOnClickListener {
-            val intent = Intent(applicationContext, HomeThermometer::class.java)
+        btnAdicionar.setOnClickListener {
+            val arduinoName = txtNome.text.toString().trim()
+            val arduinoCode = txtCodigo.text.toString().trim().toInt()
+            val payload = NewArduinoPayload(arduinoCode, arduinoName)
 
-            startActivity(intent)
-        }
-
-        homeUmiViewNewDispo.setOnClickListener {
-            val intent = Intent(applicationContext, HomeMoisture::class.java)
-
-            startActivity(intent)
-        }
-
-        homeConfigViewNewDispo.setOnClickListener {
-            val intent = Intent(applicationContext, Settings::class.java)
-
-            startActivity(intent)
+            RetrofitInitializer()
+                .arduinoService()
+                .newArduino(payload)
+                .enqueue(NewArduinoCallback(this, arduinoCode))
         }
     }
 }

@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class Record(
     @SerializedName("id") val code: Number? = null,
-    @SerializedName("temperature") val temperature: Number? = null,
-    @SerializedName("humidity") val humidity: Number? = null,
-    @SerializedName("api_temperature") val apiTemperature: Number? = null,
+    @SerializedName("temperature") val temperature: String? = null,
+    @SerializedName("humidity") val humidity: String? = null,
+    @SerializedName("api_temperature") val apiTemperature: String? = null,
     @SerializedName("created_at") val createdAt: String? = null
 )

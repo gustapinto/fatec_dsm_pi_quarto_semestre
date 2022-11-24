@@ -25,9 +25,7 @@ class HasConnectionsCallback : Callback<GenericResponse> {
             RetrofitInitializer()
                 .connectionService()
                 .getArduinos(Config.getAndroidId(this.ctx))
-                .enqueue(GetConnectionsCallback())
-
-            this.ctx.startActivity(Intent(this.ctx, HomeThermometer::class.java))
+                .enqueue(GetConnectionsCallback(this.ctx))
         } else {
             this.ctx.startActivity(Intent(this.ctx, NewDevice::class.java))
         }
