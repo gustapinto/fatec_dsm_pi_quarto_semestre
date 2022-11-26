@@ -39,9 +39,6 @@
             android:name=".NewDevice"
             android:exported="false" />
         <activity
-            android:name=".testeImagem"
-            android:exported="false" />
-        <activity
             android:name=".Init"
             android:exported="true">
             <intent-filter>
