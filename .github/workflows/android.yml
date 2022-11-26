@@ -17,12 +17,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          
-      - name: Enter into mobile folder
-        run: cd ./mobile
         
       - name: Grant Gradlew execution permission
-        run: chmod +x ./gradlew
+        run: chmod +x ./mobile/gradlew
 
       - name: Build app
-        run: ./gradlew build
+        run: cd ./mobile && ./gradlew build
