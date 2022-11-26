@@ -15,18 +15,15 @@ Já as fontes foram introduzidas de acordo com a facilidade de leitura e entendi
 Foi desenvolvido com a ferramenta de edição Figma, podendo ser encontrado à partir do link:
 https://bit.ly/3grAdCd 
 
-<br>
 
 ## Visão geral do Style Guide:
-<div>
+
+<p align="center">
 <img src="https://user-images.githubusercontent.com/71787801/203450357-fabe2d88-4260-4bb9-883f-54fc0fab8c4e.png"; style="width:500px;height:400px;">
-
-</div>
-
-<br>
+</p>
 
 ## Visão geral das telas:
-<div>
-<img src="https://user-images.githubusercontent.com/71787801/203450575-07dcc07d-8488-46b6-a559-89cd3b56b3cb.png"; style="width:550px;height:500px;">
 
-</div>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/71787801/203450575-07dcc07d-8488-46b6-a559-89cd3b56b3cb.png"; style="width:550px;height:500px;">
+</p>  
