@@ -16,13 +16,13 @@ Foi desenvolvido com a ferramenta de edição Figma, podendo ser encontrado à p
 https://bit.ly/3grAdCd 
 
 
-## Visão geral do Style Guide:
+## Style Guide:
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/71787801/203450357-fabe2d88-4260-4bb9-883f-54fc0fab8c4e.png"; style="width:500px;height:400px;">
 </p>
 
-## Visão geral das telas:
+## Telas:
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/71787801/203450575-07dcc07d-8488-46b6-a559-89cd3b56b3cb.png"; style="width:550px;height:500px;">
