@@ -3,6 +3,7 @@ package com.example.project_pi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.example.project_pi.config.Config
 import com.example.project_pi.config.Global
 import com.example.project_pi.services.callbacks.GetArduinosCallback
@@ -14,12 +15,13 @@ class HomeThermometer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_thermometer)
+        val componentsView : Array<TextView> = arrayOf(txtTemp, textView19, textView20, textView21, textView22)
 
         // Obtém as últimas 5 temperaturas
         RetrofitInitializer()
             .thermostatService()
             .getRecordsWithLimits(Global.getArduinos(), 5, Global.getToken())
-            .enqueue(PopulateTemperaturePageCallback(txtTemp, textView19, textView20, textView21, textView22))
+            .enqueue(PopulateTemperaturePageCallback(componentsView))
 
         homeUmiViewTemp.setOnClickListener {
             val intent = Intent(applicationContext, HomeMoisture::class.java)
