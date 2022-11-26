@@ -34,3 +34,8 @@ A API foi hospedada em um servidor cloud por meio da utilização do Docker, sua
 <p align="center">
 <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/blob/main/api/docs/diagramas/infraestrutura_do_ambiente_de_produ%C3%A7%C3%A3o.png" width="65%">
 </p>
+
+
+## API Consumida
+
+Para validarmos os dados coletados pelos sensores foi utilizada uma API externa, a *OpenWeatherMap*, que disponibiliza medições de temperatura e umidade da localização passada, proporcionando uma melhor visualização de alertas irregulares.
