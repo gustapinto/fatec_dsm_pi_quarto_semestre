@@ -5,23 +5,21 @@ import com.example.project_pi.dataclasses.MultipleRecordResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.time.LocalDate
 
-class PopulateTemperaturePageCallback : Callback<MultipleRecordResponse> {
+class PopulateMoisturePageCallback : Callback<MultipleRecordResponse> {
     private val componentsView: Array<TextView>
 
-    constructor(componentsView: Array<TextView>) {
+    constructor(componentsView : Array<TextView>){
         this.componentsView = componentsView
     }
 
     override fun onResponse(call: Call<MultipleRecordResponse>, response: Response<MultipleRecordResponse>) {
         val records = response.body()!!.record!!
-        println(records)
 
-        for (i in 0 until records.size) {
-            val temperature = records[i].temperature!!
+        for(i in 0 until records.size){
+            val humidity = records[i].humidity!!
 
-            componentsView[i].setText(temperature + "ºC")
+            componentsView[i].setText(humidity + "%")
         }
     }
 

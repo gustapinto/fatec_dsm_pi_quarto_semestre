@@ -3,6 +3,7 @@ package com.example.project_pi.services.callbacks
 import android.content.Context
 import android.content.Intent
 import com.example.project_pi.HomeThermometer
+import com.example.project_pi.config.Config
 import com.example.project_pi.dataclasses.GenericResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,6 +17,7 @@ class NewConnectionCallback : Callback<GenericResponse> {
     }
 
     override fun onResponse(call: Call<GenericResponse>, response: Response<GenericResponse>) {
+        println(Config.getAndroidId(this.ctx))
         val intent = Intent(this.ctx, HomeThermometer::class.java)
         this.ctx.startActivity(intent)
     }
