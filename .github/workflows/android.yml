@@ -1,4 +1,4 @@
-name: Build android app
+name: Build app
 
 on:
   push:
@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Grant Gradlew permission
+        run: chmod +x ./mobile/gradlew
 
       - name: Build
         run: ./mobile/gradlew build
