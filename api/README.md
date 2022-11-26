@@ -11,7 +11,7 @@ Desenvolvida utilizando a linguagem de programação Typescript, apoiada pela pl
 
 ## Casos de uso
 
-Os casos de uso que definem a API são:
+Os casos de uso da API são:
 
 <p align="center">
 <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/blob/main/api/docs/diagramas/Casos%20de%20uso.jpg">
@@ -20,7 +20,7 @@ Os casos de uso que definem a API são:
 
 ## Arquitetura
 
-A API foi desenvolvida utilizando-se um paradigma de programação orientado a objetos, com esses objetos e classes sendo organizados conforme os princípios da divisão de responsabilidades pregadas pela arquitetura limpa, conforme o diagrama de pacotes a seguir:
+A API foi desenvolvida à partir de um paradigma de programação orientado a objetos, esses objetos e classes são organizados conforme os princípios da divisão de responsabilidades pregadas pela arquitetura limpa, conforme o diagrama de pacotes a seguir:
 
 <p align="center">
 <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/blob/main/api/docs/diagramas/Componentes%20de%20arquitetura.drawio.png">
