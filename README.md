@@ -42,3 +42,11 @@ Para conhecer melhor nosso projeto e acompanhar os próximos desenvolvimentos e 
     <img src="https://avatars.githubusercontent.com/0502j" width="15%">
   </a>
 </p>
+
+
+## Pipelines
+
+<p align="center">
+  <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/actions/workflows/deploy.yml/badge.svg?branch=main">
+  <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/actions/workflows/android.yml/badge.svg?branch=main">
+</p>
