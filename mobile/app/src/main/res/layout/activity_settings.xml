@@ -52,7 +52,6 @@
         android:layout_marginTop="70dp"
         android:background="@drawable/rounded_groups"
         android:backgroundTint="@color/cultured"
-        android:onClick="alterView"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3"
         tools:ignore="SpeakableTextPresentCheck" />
