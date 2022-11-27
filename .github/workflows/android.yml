@@ -24,7 +24,8 @@ jobs:
           keystore_password: ${{ secrets.KEYSTORE_PASSW }}
           key_alias: ${{ secrets.KEY_ALIAS }}
           key_password: ${{ secrets.KEY_PASSW }}
-          gradlew_dir: ./mobile
+          gradlew_file: mobile/gradlew
+          gradlew_dir: mobile
 
       # - name: Set up Java
       #   uses: actions/setup-java@v1
