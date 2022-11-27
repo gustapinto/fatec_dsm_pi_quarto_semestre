@@ -35,5 +35,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           file: ./mobile/app/build/outputs/apk/release/app-release-unsigned.apk
-          verbose: true
-          draft: true
