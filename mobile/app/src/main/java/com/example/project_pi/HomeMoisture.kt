@@ -13,11 +13,12 @@ class HomeMoisture : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_moisture)
         val componentsView : Array<TextView> = arrayOf(txtMoisture, txtMoisture2, txtMoisture3, txtMoisture4, txtMoisture5)
+        val datesView: Array<TextView> = arrayOf(txtDateM1, txtDateM2, txtDateM3, txtDateM4)
 
         RetrofitInitializer()
             .thermostatService()
             .getRecordsWithLimits(Global.getArduinos(), 5, Global.getToken())
-            .enqueue(PopulateMoisturePageCallback(componentsView))
+            .enqueue(PopulateMoisturePageCallback(componentsView, datesView))
 
         homeTempViewUmi.setOnClickListener {
             val intent = Intent(applicationContext, HomeThermometer::class.java)

@@ -7,5 +7,6 @@ data class Record(
     @SerializedName("temperature") val temperature: String? = null,
     @SerializedName("humidity") val humidity: String? = null,
     @SerializedName("api_temperature") val apiTemperature: String? = null,
-    @SerializedName("created_at") val createdAt: String? = null
+    @SerializedName("created_at") val createdAt: String? = null,
+    @SerializedName("date") val date: String? = null,
 )

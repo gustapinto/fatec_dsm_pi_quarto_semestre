@@ -45,7 +45,7 @@
         app:srcCompat="@drawable/thermometer" />
 
     <TextView
-        android:id="@+id/txtTemp"
+        android:id="@+id/txtTemp1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00ºC"
@@ -65,7 +65,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTemp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTemp1" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -195,7 +195,7 @@
         app:layout_constraintTop_toTopOf="@+id/view17" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/txtTemp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -207,7 +207,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image11" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/txtTemp3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -219,7 +219,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image12" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/txtTemp4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -231,7 +231,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image13" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/txtTemp5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -243,49 +243,53 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image14" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/txtDate4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view17"
         app:layout_constraintStart_toStartOf="@+id/view17"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTemp5" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/txtDate3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view16"
         app:layout_constraintStart_toStartOf="@+id/view16"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTemp4" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/txtDate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view15"
         app:layout_constraintStart_toStartOf="@+id/view15"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTemp3" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/txtDate1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view14"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="@+id/view14"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTemp2" />
 
     <ImageView
         android:id="@+id/homeTempViewTemp"
