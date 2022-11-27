@@ -244,10 +244,11 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image19" />
 
     <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/txtDateM4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view20"
@@ -255,10 +256,11 @@
         app:layout_constraintTop_toBottomOf="@+id/txtMoisture5" />
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/txtDateM3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view11"
@@ -266,10 +268,11 @@
         app:layout_constraintTop_toBottomOf="@+id/txtMoisture4" />
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/txtDateM2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view12"
@@ -277,10 +280,11 @@
         app:layout_constraintTop_toBottomOf="@+id/txtMoisture3" />
 
     <TextView
-        android:id="@+id/textView42"
+        android:id="@+id/txtDateM1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/0000"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/view19"
