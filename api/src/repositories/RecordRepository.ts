@@ -9,7 +9,11 @@ export class RecordRepository extends Repository {
      * Obtém os registros de temperatura para os códigos de arduino passados
     */
     async getRecordsWithArduinoCodes(codes: Array<number>, startDate?: Date, limit?: number): Promise<Array<any>> {
-        let queryString = 'SELECT * FROM records WHERE arduino_code = ANY($1)'
+        let queryString = `
+            SELECT *, TO_CHAR(created_at, 'dd/mm/yy\n hh:mi') as "date"
+            FROM records
+            WHERE arduino_code = ANY($1)
+        `
         let params: Array<Array<number>|number|Date> = [codes]
 
         if (startDate) {
