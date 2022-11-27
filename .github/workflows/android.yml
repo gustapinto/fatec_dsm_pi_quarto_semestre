@@ -29,11 +29,11 @@ jobs:
       - name: Build app
         run: cd ./mobile && ./gradlew build && ls -la ./
       
-      - name: Publish
+      - name: Publish to releases
         uses: xresloader/upload-to-github-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
+          file: ./mobile/app/build/outputs/apk/release/app-release-unsigned.apk
           verbose: true
           draft: true
