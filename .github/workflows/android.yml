@@ -24,4 +24,9 @@ jobs:
         run: chmod +x ./mobile/gradlew
 
       - name: Build app
-        run: cd ./mobile && ./gradlew build
+        run: cd ./mobile && ./gradlew build && ls -la ./
+      
+      - name: Publish
+        uses: xresloader/upload-to-github-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
