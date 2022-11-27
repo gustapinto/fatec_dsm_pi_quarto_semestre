@@ -17,27 +17,27 @@ jobs:
       - name: Checkout into source code
         uses: actions/checkout@v2
 
-      - name: Build Signed APK
-        uses: victorbnl/build-signed-apk@v1.0.0
+      - name: Set up Java
+        uses: actions/setup-java@v1
         with:
-          keystore_b64: ${{ secrets.KEYSTORE_BASE }}
-          keystore_password: ${{ secrets.KEYSTORE_PASSW }}
-          key_alias: ${{ secrets.KEY_ALIAS }}
-          key_password: ${{ secrets.KEY_PASSW }}
-          gradlew_file: ./mobile/gradlew
-          gradlew_dir: ./mobile
+          java-version: 11
 
-      # - name: Set up Java
-      #   uses: actions/setup-java@v1
-      #   with:
-      #     java-version: 11
-        
-      # - name: Grant Gradlew execution permission
-      #   run: chmod +x ./mobile/gradlew
+      - name: Grant Gradlew execution permission
+        run: chmod +x ./mobile/gradlew
 
-      # - name: Build app
-      #   run: cd ./mobile && ./g./radlew build && ls -la ./
-      
+      - name: Create signing key
+        run: echo "${{ secrets.KEYSTORE_BASE }}" | base64 -d > $GITHUB_WORKSPACE/signing-key.jks
+
+      - name: Build signed app
+        run: |
+          cd ./mobile
+          ./gradlew build
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=$GITHUB_WORKSPACE/signing-key.jks \
+            -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSW }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSW }}
+
       - name: Publish app to Github releases
         uses: xresloader/upload-to-github-release@v1
         env:
