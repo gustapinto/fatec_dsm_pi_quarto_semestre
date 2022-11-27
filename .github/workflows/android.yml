@@ -16,17 +16,26 @@ jobs:
     steps:
       - name: Checkout into source code
         uses: actions/checkout@v2
-      
-      - name: Set up Java
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
-        
-      - name: Grant Gradlew execution permission
-        run: chmod +x ./mobile/gradlew
 
-      - name: Build app
-        run: cd ./mobile && ./gradlew build && ls -la ./
+      - name: Build Signed APK
+        uses: victorbnl/build-signed-apk@v1.0.0
+        with:
+          keystore_b64: ${{ secrets.KEYSTORE_BASE }}
+          keystore_password: ${{ secrets.KEYSTORE_PASSW }}
+          key_alias: ${{ secrets.KEY_ALIAS }}
+          key_password: ${{ sevcrets.KEY_PASSW }}
+          gradlew_dir: ./mobile
+
+      # - name: Set up Java
+      #   uses: actions/setup-java@v1
+      #   with:
+      #     java-version: 11
+        
+      # - name: Grant Gradlew execution permission
+      #   run: chmod +x ./mobile/gradlew
+
+      # - name: Build app
+      #   run: cd ./mobile && ./gradlew build && ls -la ./
       
       - name: Publish app to Github releases
         uses: xresloader/upload-to-github-release@v1

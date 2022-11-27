@@ -59,3 +59,4 @@ replay_pid*
 
 # Custom
 !mobile/gradle/wrapper/*.jar
+app/release/
