@@ -23,7 +23,7 @@ jobs:
           keystore_b64: ${{ secrets.KEYSTORE_BASE }}
           keystore_password: ${{ secrets.KEYSTORE_PASSW }}
           key_alias: ${{ secrets.KEY_ALIAS }}
-          key_password: ${{ sevcrets.KEY_PASSW }}
+          key_password: ${{ secrets.KEY_PASSW }}
           gradlew_dir: ./mobile
 
       # - name: Set up Java
@@ -42,5 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: ./mobile/app/build/outputs/apk/release/app-release-unsigned.apk
+          # file: ./mobile/app/build/outputs/apk/release/app-release-unsigned.apk
+          file: ./mobile/app/build/outputs/apk/release/app-release.apk
           draft: false
