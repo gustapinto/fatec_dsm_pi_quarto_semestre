@@ -9,19 +9,22 @@ import java.time.LocalDate
 
 class PopulateTemperaturePageCallback : Callback<MultipleRecordResponse> {
     private val componentsView: Array<TextView>
+    private val datesViews: Array<TextView>
 
-    constructor(componentsView: Array<TextView>) {
+    constructor(componentsView: Array<TextView>, datesViews: Array<TextView>) {
         this.componentsView = componentsView
+        this.datesViews = datesViews
     }
 
     override fun onResponse(call: Call<MultipleRecordResponse>, response: Response<MultipleRecordResponse>) {
         val records = response.body()!!.record!!
-        println(records)
 
-        for (i in 0 until records.size) {
-            val temperature = records[i].temperature!!
+        records.forEachIndexed { i, record ->
+            this.componentsView[i].text = record.temperature!! + " ºC"
 
-            componentsView[i].setText(temperature + "ºC")
+            if (i > 0) { // Pula o primeiro registro pois ele não exibe data, somente o valor
+                this.datesViews[i-1].text = record.date!! // "i-1" pois o array de datas é menor
+            }
         }
     }
 

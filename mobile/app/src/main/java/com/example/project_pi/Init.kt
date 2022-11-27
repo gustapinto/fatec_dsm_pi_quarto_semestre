@@ -19,6 +19,8 @@ class Init : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_init)
 
+        println(Config.getAndroidId(this))
+
         buttonStart.setOnClickListener {
             RetrofitInitializer()
                 .connectionService()
