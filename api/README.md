@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white">
 </p>
 
-Desenvolvida utilizando a linguagem de programação Typescript, apoiada pela plataforma Node.js e pelo banco de dados PostgreSQL, a qual é utilizada como um microsserviço que realiza a ingestão dos dados brutos coletados pelos sensores (*Arduinos*), trata-os e os disponibiliza para que o apicativo mobile (*Android*) os consuma, também gerenciando as conexões entre dispositivos móveis e sensores.
+Desenvolvida utilizando a linguagem de programação Typescript, apoiada pela plataforma Node.js e pelo banco de dados PostgreSQL, a qual é utilizada como um microsserviço que realiza a ingestão dos dados brutos coletados pelos sensores (*Arduinos*), trata-os e os disponibiliza para que o aplicativo mobile (*Android*) os consuma, também gerenciando as conexões entre dispositivos móveis e sensores.
 
 
 ## Casos de uso
