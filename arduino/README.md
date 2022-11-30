@@ -7,4 +7,4 @@
 
 Programado com a linguagem de programação C++ o Arduino é utilizado como sensor, coletando as informações de temperatura e umidade do ambiente e enviando essas informações para a API.
 
-O sensor possui um formato retangular com entrada USB para a conexão com a fonte de energia para sua alimentação. O mesmo também possui um velcro para sua fixação no equipamento e a visualização de seus dados e configuração é realizada por meio de integração com o *Mobile*.
+O sensor possui uma entrada USB para a conexão com a fonte de energia para sua alimentação e a visualização de seus dados e configurações é realizada por meio da integração com o Mobile.
