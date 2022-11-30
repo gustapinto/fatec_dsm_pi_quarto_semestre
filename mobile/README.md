@@ -6,4 +6,4 @@
 <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=androidStudio&logoColor=white">
 </p>
 
-Programado com a linguagem de programação Kotlin o aplicativo mobile apresenta as informações capturadas e tratadas pelo sensor. Além de empregar o design desenvolvido anteriormente e exibir alertas de condições críticas.
+Programado com a linguagem de programação Kotlin o aplicativo mobile apresenta as informações capturadas e tratadas pelo sensor, emprega o design desenvolvido anteriormente e exibe alertas de condições críticas, se fazendo necessária apenas a conexão com uma rede de internet.
