@@ -1,4 +1,4 @@
-# PI Quarto semestre
+# JKCG Sensor
 
 <p align="center">
   <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/blob/main/design/Fundo_branco_-_Redonda.png" width="30%">
