@@ -1,6 +1,10 @@
 # PI Quarto semestre
 
 <p align="center">
+  <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/blob/main/design/Fundo_branco_-_Redonda.png" width="30%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white">
   <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white">
   <img src="https://img.shields.io/badge/Github%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white">
