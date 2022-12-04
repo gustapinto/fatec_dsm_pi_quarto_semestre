@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-04T13:28:24.070Z" agent="5.0 (X11; Ubuntu)" etag="t12qHWsT5YCf1ZUVJAvt" version="20.6.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-12-04T13:31:39.235Z" agent="5.0 (X11; Ubuntu)" etag="dP_vN2Nh8Ex26EaafOaw" version="20.6.0" type="github" pages="2">
   <diagram id="eqwL3PuyM8vPTdLs0j7_" name="Página-1">
     <mxGraphModel dx="1380" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -252,7 +252,7 @@
         <mxCell id="UMcfs1S_rAOMvREuSRE9-4" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="UMcfs1S_rAOMvREuSRE9-1" source="UMcfs1S_rAOMvREuSRE9-60" target="UMcfs1S_rAOMvREuSRE9-66">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UMcfs1S_rAOMvREuSRE9-5" value="models" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=0;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
+        <mxCell id="UMcfs1S_rAOMvREuSRE9-5" value="models" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=0;collapsible=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
           <mxGeometry x="220" y="520" width="170" height="170" as="geometry" />
         </mxCell>
         <mxCell id="UMcfs1S_rAOMvREuSRE9-6" value="middlewares" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=0;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
@@ -308,7 +308,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UMcfs1S_rAOMvREuSRE9-21" value="«Repository»&lt;br&gt;&lt;b&gt;Repository&lt;/b&gt;" style="html=1;dropTarget=0;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
+        <mxCell id="UMcfs1S_rAOMvREuSRE9-21" value="«Abstract»&lt;br&gt;&lt;b&gt;Repository&lt;/b&gt;" style="html=1;dropTarget=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
           <mxGeometry x="620" y="180" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="UMcfs1S_rAOMvREuSRE9-22" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-21">
@@ -364,7 +364,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UMcfs1S_rAOMvREuSRE9-37" value="&lt;div&gt;«interface»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;IWheatherExtractor&lt;/b&gt;&lt;/div&gt;" style="html=1;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
+        <mxCell id="UMcfs1S_rAOMvREuSRE9-37" value="&lt;div&gt;«interface»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;IWheatherExtractor&lt;/b&gt;&lt;/div&gt;" style="html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
           <mxGeometry x="27.5" y="260" width="125" height="50" as="geometry" />
         </mxCell>
         <mxCell id="UMcfs1S_rAOMvREuSRE9-38" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;dashed=1;" edge="1" parent="UMcfs1S_rAOMvREuSRE9-1" source="UMcfs1S_rAOMvREuSRE9-39" target="UMcfs1S_rAOMvREuSRE9-37">
@@ -378,7 +378,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UMcfs1S_rAOMvREuSRE9-41" value="&lt;div&gt;«interface»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;IWheatherParser&lt;/b&gt;&lt;/div&gt;" style="html=1;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
+        <mxCell id="UMcfs1S_rAOMvREuSRE9-41" value="&lt;div&gt;«interface»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;IWheatherParser&lt;/b&gt;&lt;/div&gt;" style="html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
           <mxGeometry x="27.5" y="480" width="125" height="50" as="geometry" />
         </mxCell>
         <mxCell id="UMcfs1S_rAOMvREuSRE9-42" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;dashed=1;" edge="1" parent="UMcfs1S_rAOMvREuSRE9-1" source="UMcfs1S_rAOMvREuSRE9-43" target="UMcfs1S_rAOMvREuSRE9-41">
@@ -420,7 +420,7 @@
         <mxCell id="UMcfs1S_rAOMvREuSRE9-52" value="database" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=0;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
           <mxGeometry x="440" y="390" width="160" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="UMcfs1S_rAOMvREuSRE9-53" value="&lt;div&gt;«interface»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;IConnector&lt;/b&gt;" style="html=1;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
+        <mxCell id="UMcfs1S_rAOMvREuSRE9-53" value="&lt;div&gt;«interface»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;IConnector&lt;/b&gt;" style="html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="UMcfs1S_rAOMvREuSRE9-1">
           <mxGeometry x="457.5" y="430" width="125" height="50" as="geometry" />
         </mxCell>
         <mxCell id="UMcfs1S_rAOMvREuSRE9-54" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;dashed=1;" edge="1" parent="UMcfs1S_rAOMvREuSRE9-1" source="UMcfs1S_rAOMvREuSRE9-55" target="UMcfs1S_rAOMvREuSRE9-53">
