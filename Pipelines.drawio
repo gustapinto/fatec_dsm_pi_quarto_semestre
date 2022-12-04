@@ -1,1 +1,86 @@
-<mxfile host="app.diagrams.net" modified="2022-12-04T14:17:49.376Z" agent="5.0 (X11; Ubuntu)" version="20.6.0" etag="JjH4yy7KfT3mXF0QkLvW" type="github"><diagram id="5UVObPh_I-hmQxxKeYar">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-12-04T14:35:57.587Z" agent="5.0 (X11; Ubuntu)" version="20.6.0" etag="-4OD3RlHZZbODoQ9Rktm" type="github">
+  <diagram id="vHn9MOrNEA1A4z5qV4CH" name="Página-1">
+    <mxGraphModel dx="1640" dy="933" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-2" value="&lt;span class=&quot;pl-s&quot;&gt;Build and publish mobile app&lt;/span&gt;" style="shape=folder;fontStyle=1;tabWidth=200;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1000" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-3" value="" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry width="1000" height="168" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-4" value="&lt;span class=&quot;pl-s&quot;&gt;Checkout into source code&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry x="40" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-5" value="&lt;span class=&quot;pl-s&quot;&gt;Set up Java&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry x="200" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-2" source="ArdLbTVOFW3LApVHjoBx-4" target="ArdLbTVOFW3LApVHjoBx-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-7" value="&lt;span class=&quot;pl-s&quot;&gt;Grant Gradlew execution permission&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry x="360" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-11" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-2" source="ArdLbTVOFW3LApVHjoBx-5" target="ArdLbTVOFW3LApVHjoBx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-10" value="Create signing key" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry x="520" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-12" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-2" source="ArdLbTVOFW3LApVHjoBx-7" target="ArdLbTVOFW3LApVHjoBx-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-8" value="Build signed app" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry x="680" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-13" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-2" source="ArdLbTVOFW3LApVHjoBx-10" target="ArdLbTVOFW3LApVHjoBx-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-9" value="Publish app to Github releases" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-2">
+          <mxGeometry x="840" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-14" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-2" source="ArdLbTVOFW3LApVHjoBx-8" target="ArdLbTVOFW3LApVHjoBx-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-15" value="&lt;span class=&quot;pl-s&quot;&gt;Deploy to production&lt;/span&gt;" style="shape=folder;fontStyle=1;tabWidth=200;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="310" width="840" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-16" value="" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-15">
+          <mxGeometry width="840" height="168" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-17" value="&lt;span class=&quot;pl-s&quot;&gt;Enable SSH&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-15">
+          <mxGeometry x="40" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-18" value="&lt;table data-tagsearch-path=&quot;.github/workflows/deploy.yml&quot; data-tagsearch-lang=&quot;YAML&quot; data-paste-markdown-skip=&quot;&quot; data-tab-size=&quot;8&quot; class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-hpc=&quot;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;blob-code blob-code-inner js-file-line&quot; id=&quot;LC21&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;Add hosts&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-15">
+          <mxGeometry x="200" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-19" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-15" source="ArdLbTVOFW3LApVHjoBx-17" target="ArdLbTVOFW3LApVHjoBx-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-20" value="&lt;span class=&quot;pl-s&quot;&gt;Pull&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-15">
+          <mxGeometry x="360" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-21" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-15" source="ArdLbTVOFW3LApVHjoBx-18" target="ArdLbTVOFW3LApVHjoBx-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-22" value="Test" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-15">
+          <mxGeometry x="520" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-23" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-15" source="ArdLbTVOFW3LApVHjoBx-20" target="ArdLbTVOFW3LApVHjoBx-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-24" value="&lt;span class=&quot;pl-s&quot;&gt;Deploy&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ArdLbTVOFW3LApVHjoBx-15">
+          <mxGeometry x="680" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ArdLbTVOFW3LApVHjoBx-25" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="ArdLbTVOFW3LApVHjoBx-15" source="ArdLbTVOFW3LApVHjoBx-22" target="ArdLbTVOFW3LApVHjoBx-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
