@@ -7,3 +7,7 @@
 </p>
 
 Programado com a linguagem de programação Kotlin o aplicativo mobile apresenta as informações capturadas e tratadas pelo sensor, emprega o design desenvolvido anteriormente e exibe alertas de condições críticas, se fazendo necessária apenas a conexão com uma rede de internet.
+
+<p align="center">
+  <img src="https://github.com/gustapinto/fatec_dsm_pi_quarto_semestre/blob/main/mobile/Componentes%20Mobile-P%C3%A1gina-1.jpg">
+</p>
