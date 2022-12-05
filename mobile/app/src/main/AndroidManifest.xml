@@ -21,12 +21,6 @@
             android:name=".History"
             android:exported="false" />
         <activity
-            android:name=".AddDevice"
-            android:exported="false" />
-        <activity
-            android:name=".ChangeInformation"
-            android:exported="false" />
-        <activity
             android:name=".Settings"
             android:exported="false" />
         <activity
