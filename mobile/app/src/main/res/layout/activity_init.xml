@@ -21,71 +21,84 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/moisture_low"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image3"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="45dp"
         android:src="@drawable/moisture_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintStart_toEndOf="@+id/profile_image4"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image4"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="45dp"
         android:src="@drawable/temperature_high"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/moisture_low"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image2"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="45dp"
         android:src="@drawable/temperature_low"
         app:civ_border_color="#FF000000"
         app:civ_border_width="0dp"
         app:layout_constraintStart_toEndOf="@+id/profile_image3"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="291dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="20dp"
-        android:text="Meça a temperatura e umidade do ambiente em que se encontra o equipamento monitorado, receba notificações em tempo real de potenciais riscos."
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="30dp"
+        android:text="Olá! Esse é o aplicativo para a visualização de temperatura e umidade capturada por seu equipamento físico JKCG Sensor. "
         android:textAlignment="center"
         android:textColor="@color/cultured"
-        android:textSize="17sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="335dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="5dp"
+        android:text="Aqui você poderá conectar seu celular ao sensor e receber alertas sobre possíveis riscos relacionados às medições, além de também acompanhá-las em tempo real. "
+        android:textAlignment="center"
+        android:textColor="@color/cultured"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/buttonStart"
         android:layout_width="170dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rounded_buttons"
         android:backgroundTint="@color/oxford_blue"
         android:text="Começar"
@@ -93,5 +106,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="420dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo_sem_fundo" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="349dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="10dp"
+        android:text=" Seu sensor deve estar conectado à uma fonte de energia presente no ambiente em que deseja o monitoramento e possuir conexão com a internet, tanto seu smartphone quanto o sensor devem possuir acesso à internet."
+        android:textAlignment="center"
+        android:textColor="#305168"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

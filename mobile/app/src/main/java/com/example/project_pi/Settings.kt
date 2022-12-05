@@ -28,12 +28,6 @@ class Settings : AppCompatActivity() {
             startActivity(intent)
         }
 
-        alterarInformacoes.setOnClickListener {
-            val intent = Intent(applicationContext, ChangeInformation::class.java)
-
-            startActivity(intent)
-        }
-
         newDispositivo.setOnClickListener {
             val intent = Intent(applicationContext, NewDevice::class.java)
 
