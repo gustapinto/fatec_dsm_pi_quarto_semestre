@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Últimos registros"
+        android:text="Registros anteriores"
         android:textColor="@color/cultured"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/view10" />
@@ -137,7 +137,7 @@
         app:layout_constraintTop_toTopOf="@+id/view10" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image20"
+        android:id="@+id/registerOneViewMoisture"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toTopOf="@+id/view19" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image19"
+        android:id="@+id/registerFourViewMoisture"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -161,7 +161,7 @@
         app:layout_constraintTop_toTopOf="@+id/view20" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image22"
+        android:id="@+id/registerThreeViewMoisture"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -173,7 +173,7 @@
         app:layout_constraintTop_toTopOf="@+id/view11" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image21"
+        android:id="@+id/registerTwoViewMoisture"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -194,7 +194,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view19"
         app:layout_constraintStart_toStartOf="@+id/view19"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image20" />
+        app:layout_constraintTop_toBottomOf="@+id/registerOneViewMoisture" />
 
     <TextView
         android:id="@+id/txtMoisture3"
@@ -206,7 +206,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view12"
         app:layout_constraintStart_toStartOf="@+id/view12"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image21" />
+        app:layout_constraintTop_toBottomOf="@+id/registerTwoViewMoisture" />
 
     <TextView
         android:id="@+id/txtMoisture4"
@@ -218,7 +218,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image22" />
+        app:layout_constraintTop_toBottomOf="@+id/registerThreeViewMoisture" />
 
     <TextView
         android:id="@+id/txtMoisture5"
@@ -230,7 +230,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view20"
         app:layout_constraintStart_toStartOf="@+id/view20"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image19" />
+        app:layout_constraintTop_toBottomOf="@+id/registerFourViewMoisture" />
 
     <TextView
         android:id="@+id/txtDateM4"
@@ -299,7 +299,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view5"
         app:layout_constraintStart_toStartOf="@+id/view5"
         app:layout_constraintTop_toTopOf="@+id/view5"
-        app:srcCompat="@drawable/moisture" />
+        app:srcCompat="@drawable/umi_color" />
 
     <ImageView
         android:id="@+id/homeConfigViewUmi"

@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Regstros anteriores"
+        android:text="Registros anteriores"
         android:textColor="@color/cultured"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/view13" />
@@ -147,7 +147,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image11"
+        android:id="@+id/registerOneViewThermometer"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -159,7 +159,7 @@
         app:layout_constraintTop_toTopOf="@+id/view14" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image12"
+        android:id="@+id/registerTwoViewThermometer"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -171,7 +171,7 @@
         app:layout_constraintTop_toTopOf="@+id/view15" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image13"
+        android:id="@+id/registerThreeViewThermometer"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -183,7 +183,7 @@
         app:layout_constraintTop_toTopOf="@+id/view16" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image14"
+        android:id="@+id/registerFourViewThermometer"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -204,7 +204,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view14"
         app:layout_constraintStart_toStartOf="@+id/view14"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image11" />
+        app:layout_constraintTop_toBottomOf="@+id/registerOneViewThermometer" />
 
     <TextView
         android:id="@+id/txtTemp3"
@@ -216,7 +216,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view15"
         app:layout_constraintStart_toStartOf="@+id/view15"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image12" />
+        app:layout_constraintTop_toBottomOf="@+id/registerTwoViewThermometer" />
 
     <TextView
         android:id="@+id/txtTemp4"
@@ -228,7 +228,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view16"
         app:layout_constraintStart_toStartOf="@+id/view16"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image13" />
+        app:layout_constraintTop_toBottomOf="@+id/registerThreeViewThermometer" />
 
     <TextView
         android:id="@+id/txtTemp5"
@@ -240,7 +240,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/view17"
         app:layout_constraintStart_toStartOf="@+id/view17"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image14" />
+        app:layout_constraintTop_toBottomOf="@+id/registerFourViewThermometer" />
 
     <TextView
         android:id="@+id/txtDate4"
@@ -299,7 +299,7 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/view18"
         app:layout_constraintTop_toTopOf="@+id/view18"
-        app:srcCompat="@drawable/temperature" />
+        app:srcCompat="@drawable/temp_color" />
 
     <ImageView
         android:id="@+id/homeUmiViewTemp"

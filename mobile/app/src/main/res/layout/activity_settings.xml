@@ -109,7 +109,7 @@
         android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="@+id/view21"
         app:layout_constraintTop_toTopOf="@+id/view21"
-        app:srcCompat="@drawable/config" />
+        app:srcCompat="@drawable/config_color" />
 
     <ImageView
         android:id="@+id/homeTempViewConfig"

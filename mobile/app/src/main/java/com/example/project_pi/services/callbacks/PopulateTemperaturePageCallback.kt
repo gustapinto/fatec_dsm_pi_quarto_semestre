@@ -1,5 +1,7 @@
 package com.example.project_pi.services.callbacks
 
+import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.project_pi.dataclasses.MultipleRecordResponse
 import retrofit2.Call
@@ -10,10 +12,12 @@ import java.time.LocalDate
 class PopulateTemperaturePageCallback : Callback<MultipleRecordResponse> {
     private val componentsView: Array<TextView>
     private val datesViews: Array<TextView>
+    private val componentsIconsTemp: Array<ImageView>
 
-    constructor(componentsView: Array<TextView>, datesViews: Array<TextView>) {
+    constructor(componentsView: Array<TextView>, datesViews: Array<TextView>, componentsIconsTemp: Array<ImageView>) {
         this.componentsView = componentsView
         this.datesViews = datesViews
+        this.componentsIconsTemp = componentsIconsTemp
     }
 
     override fun onResponse(call: Call<MultipleRecordResponse>, response: Response<MultipleRecordResponse>) {
